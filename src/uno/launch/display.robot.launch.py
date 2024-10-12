@@ -35,6 +35,13 @@ def generate_launch_description():
     # Path to your URDF file
     urdf_file_path = os.path.join(pkg_project_bringup, 'urdf', 'diff_drive_robot.urdf')
 
+     # load sdf
+    sdf_file_path = os.path.join(
+        '/home/prashun/ros2_ws/src/uno/',
+        'sdf',
+        'room_enviornment.sdf'  # Replace with the actual name of your SDF file
+    )
+
     gui = LaunchConfiguration("gui")
 
     # Read the URDF file
@@ -75,7 +82,9 @@ def generate_launch_description():
         Node(
             package="joint_state_publisher_gui",
             executable="joint_state_publisher_gui",
+            arguments=[sdf_file_path],
             condition=IfCondition(gui),
+            output=['screen']
         ),
          # robot state publisher
         Node(
