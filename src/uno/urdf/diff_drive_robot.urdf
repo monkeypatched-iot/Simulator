@@ -19,9 +19,7 @@
     
    
     <!-- This first link called "world" is empty -->
-
     <link name="world"></link>
-
   
     <!-- Chassis link -->
     <link name="base_link">
@@ -152,13 +150,19 @@
 
    <!-- Virtual rear wheel -->
     <link name="virtual_rear_wheel">
-      <visual>
-        <origin xyz="-0.06 0.065 0" rpy="0 0 0"/>
-        <geometry>
-          <cylinder length="0.01" radius="0.03"/>
-        </geometry>
-        <material name="invisible"/>
-      </visual>
+          <visual>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+            <material name="invisible"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+        </collision>
         <inertial>
             <mass value="0.2"/>
             <inertia ixx="0.00004667" iyy="0.00004667" izz="0.00009" ixy="0" ixz="0" iyz="0"/>
@@ -167,12 +171,18 @@
 
     <link name="virtual_front_wheel">
         <visual>
-            <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+            <origin xyz="0 -0.12 0" rpy="0 1.5708 0"/>
             <geometry>
-                <cylinder length="0.01" radius="0.03"/>
+                <cylinder radius="0.03" length="0.01"/>
             </geometry>
             <material name="invisible"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+        </collision>
         <inertial>
             <mass value="0.2"/>
             <inertia ixx="0.00004667" iyy="0.00004667" izz="0.00009" ixy="0" ixz="0" iyz="0"/>
@@ -233,7 +243,7 @@
     <joint name="virtual_front_wheel_joint" type="revolute">
         <parent link="chassis_link"/> <!-- Corrected the link name -->
         <child link="virtual_front_wheel"/>
-        <origin xyz="0.3 0 -0.15"/> <!-- Replace with your actual values -->
+        <origin xyz="-0.06 0 0" rpy="0 0 1.5708"/>
         <axis xyz="0 0 1"/>
         <limit lower="-0.4" upper="0.4" effort="100.0" velocity="0.0"/>
         <dynamics damping="0.2"/>
