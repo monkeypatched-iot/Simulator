@@ -4,6 +4,17 @@
     <model name="room">
       <static>true</static>
 
+      <plugin filename="libignition-gazebo-contact-system.so"
+              name="ignition::gazebo::systems::Contact">
+      </plugin>
+      <plugin filename="libignition-gazebo-touchplugin-system.so"
+                name="ignition::gazebo::systems::TouchPlugin">
+            <target>vehicle_blue</target>
+            <namespace>wall</namespace>
+            <time>0.001</time>
+            <enabled>true</enabled>
+      </plugin>
+      
       <!-- Create the floor -->
       <link name="floor">
         <collision name="floor_collision">
@@ -47,6 +58,11 @@
             <diffuse>0.5 0.25 0.25 1</diffuse>
           </material>
         </visual>
+        <sensor name='sensor_contact' type='contact'>
+            <contact>
+                <collision>collision</collision>
+            </contact>
+        </sensor>
       </link>
 
       <!-- Create the north wall -->
@@ -70,6 +86,11 @@
             <diffuse>0.5 0.25 0.25 1</diffuse>
           </material>
         </visual>
+                <sensor name='sensor_contact' type='contact'>
+            <contact>
+                <collision>collision</collision>
+            </contact>
+        </sensor>
       </link>
 
     <!-- Create the west wall -->
@@ -93,6 +114,11 @@
             <diffuse>0.5 0.25 0.25 1</diffuse>
           </material>
         </visual>
+        <sensor name='sensor_contact' type='contact'>
+            <contact>
+                <collision>collision</collision>
+            </contact>
+        </sensor>
       </link>
    
     <!-- Create the east wall -->
@@ -115,6 +141,11 @@
             <ambient>0.5 0.25 0.25 1</ambient> <!-- Brown color -->
             <diffuse>0.5 0.25 0.25 1</diffuse>
           </material>
+          <sensor name='sensor_contact' type='contact'>
+            <contact>
+                <collision>collision</collision>
+            </contact>
+          </sensor>
         </visual>
       </link>
     </model>

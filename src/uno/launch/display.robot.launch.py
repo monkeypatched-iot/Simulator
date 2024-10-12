@@ -39,7 +39,7 @@ def generate_launch_description():
     sdf_file_path = os.path.join(
         '/home/prashun/ros2_ws/src/uno/',
         'sdf',
-        'room_enviornment.sdf'  # Replace with the actual name of your SDF file
+        'empty_room.sdf'  # Replace with the actual name of your SDF file
     )
 
     gui = LaunchConfiguration("gui")
@@ -76,6 +76,13 @@ def generate_launch_description():
                 '--timeout', '1000',
                 '--req', 'sdf_filename: "/home/prashun/ros2_ws/src/uno/urdf/diff_drive_robot.urdf", name: "diff_drive_robot.urdf"'
             ],
+            output='screen'
+        ),
+        # add bridge
+        Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            arguments=['cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist'],
             output='screen'
         ),
         # jont state publisher for gui
