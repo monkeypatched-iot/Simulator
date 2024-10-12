@@ -8,7 +8,7 @@
               name="ignition::gazebo::systems::Contact">
       </plugin>
       <plugin filename="libignition-gazebo-touchplugin-system.so"
-                name="ignition::gazebo::systems::TouchPlugin">
+            name="ignition::gazebo::systems::TouchPlugin">
             <target>vehicle_blue</target>
             <namespace>wall</namespace>
             <time>0.001</time>

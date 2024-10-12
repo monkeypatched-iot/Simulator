@@ -17,14 +17,34 @@
     <!--  imu link -->
     <link name="imu_link"></link>
     
-    <!-- base link -->
-    <link name="base_link"/>
-
+   
     <!-- This first link called "world" is empty -->
 
     <link name="world"></link>
 
   
+    <!-- Chassis link -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.12 0.01"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.12 0.01"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.4"/>
+            <inertia ixx="0.00048333" iyy="0.0013367" izz="0.0018133" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
 
     <!-- Chassis link -->
     <link name="chassis_link">

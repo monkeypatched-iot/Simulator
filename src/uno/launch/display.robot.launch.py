@@ -107,7 +107,6 @@ def generate_launch_description():
             package="joint_state_publisher_gui",
             executable="joint_state_publisher_gui",
             arguments=[sdf_file_path],
-            condition=IfCondition(gui),
             output=['screen']
         ),
          # robot state publisher
