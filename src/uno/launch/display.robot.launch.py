@@ -89,26 +89,18 @@ def generate_launch_description():
             parameters=[controller_yaml] 
         ),
         TimerAction(
-            period=5.0,  # Adjust the period as needed
+            period=10.0,  # Adjust the period as needed
             actions=[
               # Diff Drive Controller 
-                ExecuteProcess(
-                    cmd=['ros2', 'control', 'load_controller','joint_state_broadcaster'],
-                    output='screen'
-                ),
-                ExecuteProcess(
-                    cmd=['ros2', 'control', 'set_controller_state','joint_state_broadcaster','inactive'],
-                    output='screen'
-                ),
-                # Diff Drive Controller 
-                ExecuteProcess(
-                    cmd=['ros2', 'control', 'load_controller','diff_drive_controller'],
-                    output='screen'
-                ),
-                ExecuteProcess(
-                    cmd=['ros2', 'control', 'set_controller_state','diff_drive_controller','inactive'],
-                    output='screen'
-                ),
-            ]
-        ),
+             Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["joint_state_broadcaster"],
+            ),
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["diff_drive_controller"],
+            )
+        ]),
     ])
