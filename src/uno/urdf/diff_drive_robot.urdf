@@ -253,9 +253,11 @@
 
    <!-- ........................... CAMERA PLUGIN ................................... -->
        <gazebo reference="camera_link">
-        <sensor type="depth" name="my_camera">
+        <sensor type="depth" name="kinect_camera">
+            <topic>rgbd_camera/image</topic>
             <update_rate>20</update_rate>
             <visualize>true</visualize>
+            <camera_info_topic>rgbd_camera/camera_info</camera_info_topic>
             <camera name="cam">
                 <horizontal_fov>1.3962634</horizontal_fov>
                 <image>

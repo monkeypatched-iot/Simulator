@@ -26,8 +26,6 @@
       <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
       </plugin>
   
-
-      
       <!-- Create the floor -->
       <link name="floor">
         <collision name="floor_collision">
