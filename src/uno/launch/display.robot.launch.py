@@ -11,6 +11,8 @@ from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
 from launch.actions import ExecuteProcess
 from launch.conditions import IfCondition
+from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
+from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
 
@@ -40,6 +42,14 @@ def generate_launch_description():
         '/home/prashun/ros2_ws/src/uno/',
         'sdf',
         'empty_room.sdf'  # Replace with the actual name of your SDF file
+    )
+
+    rviz_config_file = PathJoinSubstitution(
+        [
+            FindPackageShare("uno"),
+            "config",
+            "robot.rviz",
+        ]
     )
 
     gui = LaunchConfiguration("gui")
@@ -87,6 +97,11 @@ def generate_launch_description():
                        '/rgbd_camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image'],
             output='screen'
         ),
+        Node(
+            package="joint_state_publisher",
+            executable="joint_state_publisher",
+            name="joint_state_publisher",
+        ),
         # jont state publisher for gui
         Node(
             package="joint_state_publisher_gui",
@@ -121,6 +136,14 @@ def generate_launch_description():
                 package="controller_manager",
                 executable="spawner",
                 arguments=["bicycle_steering_controller", "--controller-manager", "/controller_manager"],
+            ),
+            Node(
+                package="rviz2",
+                executable="rviz2",
+                name="rviz2",
+                output="log",
+                arguments=["-d", rviz_config_file],
+                condition=IfCondition(gui),
             )
         ]),
     ])
