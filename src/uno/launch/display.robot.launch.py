@@ -71,17 +71,18 @@ def generate_launch_description():
             ],
             output='screen'
         ),
+        # jont state publisher for gui
         Node(
             package="joint_state_publisher_gui",
             executable="joint_state_publisher_gui",
             condition=IfCondition(gui),
         ),
-         # srobot state publisher
+         # robot state publisher
         Node(
             package="robot_state_publisher",
             executable="robot_state_publisher",
             output="both",
-            parameters=[{'robot_description': robot_description}],  # Pass the robot_description here
+            parameters=[{'robot_description': robot_description}],
         ),
         Node(
             package="controller_manager",
@@ -89,14 +90,15 @@ def generate_launch_description():
             parameters=[controller_yaml] 
         ),
         TimerAction(
-            period=10.0,  # Adjust the period as needed
+            period=10.0,
             actions=[
-              # Diff Drive Controller 
+              # Joint state broadcaster Controller 
              Node(
                 package="controller_manager",
                 executable="spawner",
                 arguments=["joint_state_broadcaster"],
             ),
+             # bycicle drive controller
             Node(
                 package="controller_manager",
                 executable="spawner",
