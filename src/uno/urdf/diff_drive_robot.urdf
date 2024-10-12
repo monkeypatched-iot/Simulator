@@ -1,6 +1,21 @@
 <?xml version="1.0"?>
 <robot name="diff_drive_robot">
-    
+
+  <!--............................... DEFAULT DRIVER PLUGINS ..................................... -->
+    <gazebo>
+        <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+
+        <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
+        </plugin>
+
+        <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
+        </plugin>
+    </gazebo>
+
+
+    <!--............................... MATERIALS ..................................... -->
     <material name="blue">
         <color rgba="0 0.4 0.5 1"/>
     </material>
@@ -8,11 +23,15 @@
         <color rgba="0.0 0.0 0.0 0.0"/>
     </material>
 
+      <!--............................... LINKS ..................................... -->
+
+    <!-- camera link -->
     <link name="camera_link_optical"></link>
 
+    <!--  mu link -->
     <link name="imu_link"></link>
     
-    <!-- Dummy link -->
+    <!-- base link -->
     <link name="base_link"/>
 
     <!-- Chassis link -->
@@ -148,8 +167,6 @@
         </inertial>
     </link>
 
-
-
     <!-- Joints -->
     <joint name="joint_base_chassis" type="fixed">
         <parent link="base_link"/>
@@ -231,8 +248,23 @@
         </joint>
     </ros2_control>
 
-       <gazebo reference="camera_link">
+    <!--............................... IMU PLUGIN ..................................... -->
 
+    <gazebo reference="imu_frame">
+        <sensor name="imu" type="imu">
+            <always_on>true</always_on>
+            <update_rate>5</update_rate>
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+                <ros>
+                    <remapping>~/out:=imu</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+   <!-- ........................... CAMERA PLUGIN ................................... -->
+       <gazebo reference="camera_link">
         <sensor type="depth" name="my_camera">
             <update_rate>20</update_rate>
             <visualize>true</visualize>

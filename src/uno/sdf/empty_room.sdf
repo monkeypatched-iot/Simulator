@@ -3,6 +3,7 @@
   <world name="default">
     <model name="room">
       <static>true</static>
+
       <!-- Create the floor -->
       <link name="floor">
         <collision name="floor_collision">
