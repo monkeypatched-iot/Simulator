@@ -170,7 +170,7 @@
     <joint name="joint_base_chassis" type="fixed">
         <parent link="base_link"/>
         <child link="chassis_link"/>
-        <origin xyz="0 0 0.03" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>    
 
     <joint name="joint_chassis_front_right_wheel" type="continuous">
