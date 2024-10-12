@@ -100,7 +100,7 @@ def generate_launch_description():
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["diff_drive_controller"],
+                arguments=["bicycle_steering_controller", "--controller-manager", "/controller_manager"],
             )
         ]),
     ])
