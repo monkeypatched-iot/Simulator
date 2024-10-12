@@ -7,6 +7,10 @@
     <material name="invisible">
         <color rgba="0.0 0.0 0.0 0.0"/>
     </material>
+
+    <link name="camera_link_optical"></link>
+
+    <link name="imu_link"></link>
     
     <!-- Dummy link -->
     <link name="base_link"/>
@@ -143,7 +147,9 @@
             <inertia ixx="0.00004667" iyy="0.00004667" izz="0.00009" ixy="0" ixz="0" iyz="0"/>
         </inertial>
     </link>
-    
+
+
+
     <!-- Joints -->
     <joint name="joint_base_chassis" type="fixed">
         <parent link="base_link"/>
@@ -197,6 +203,18 @@
         <dynamics damping="0.2"/>
     </joint>
 
+    <joint name="camera_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
+         <parent link="chassis_link"/>
+        <child link="camera_link_optical" />
+    </joint>
+    
+    <joint name="imu_joint" type="fixed">
+        <parent link="chassis_link" />
+        <child link="imu_link" />
+        <origin xyz="0 0 1.2" rpy="0 0 0" />
+    </joint>
+
     <ros2_control name="IgnitionSystem" type="system">
         <hardware>
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
@@ -212,6 +230,36 @@
             <state_interface name="position"/>
         </joint>
     </ros2_control>
+
+       <gazebo reference="camera_link">
+
+        <sensor type="depth" name="my_camera">
+            <update_rate>20</update_rate>
+            <visualize>true</visualize>
+            <camera name="cam">
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8B8G8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>camera_link_optical</frame_name>
+                <min_depth>0.1</min_depth>
+                <max_depth>500</max_depth>
+            </plugin>
+        </sensor>
+    </gazebo>
 
     <gazebo>
         <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
