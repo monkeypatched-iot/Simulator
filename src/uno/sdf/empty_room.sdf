@@ -14,6 +14,19 @@
             <time>0.001</time>
             <enabled>true</enabled>
       </plugin>
+      <plugin
+            filename="ignition-gazebo-scene-broadcaster-system"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+      </plugin>
+      <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+      </plugin>
+      <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
+      </plugin>
+      <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
+      </plugin>
+  
+
       
       <!-- Create the floor -->
       <link name="floor">

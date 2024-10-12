@@ -82,7 +82,9 @@ def generate_launch_description():
         Node(
             package='ros_gz_bridge',
             executable='parameter_bridge',
-            arguments=['cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist'],
+            arguments=['cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+                       '/rgbd_camera/image@sensor_msgs/msg/Image@gz.msgs.Image',
+                       '/rgbd_camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image'],
             output='screen'
         ),
         # jont state publisher for gui
