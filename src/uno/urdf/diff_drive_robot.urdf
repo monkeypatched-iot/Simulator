@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot name="diff_drive_robot">
 
-
-
     <!--............................... MATERIALS ..................................... -->
     <material name="blue">
         <color rgba="0 0.4 0.5 1"/>
@@ -278,6 +276,7 @@
         </sensor>
     </gazebo>
 
+    <!-- ........................... ROS2 CONTROL PLUGIN ................................... -->
     <gazebo>
         <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
             <robot_param>robot_description</robot_param>
