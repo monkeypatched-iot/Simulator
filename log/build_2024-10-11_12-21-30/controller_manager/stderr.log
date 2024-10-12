@@ -1,0 +1,35 @@
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_controller_manager_urdf_passing.cpp:[m[K In member function ‘[01m[Kvirtual void TestControllerManagerWithTestableCM_expect_to_failure_when_invalid_urdf_is_given_and_be_able_to_submit_new_robot_description_Test::TestBody()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_controller_manager_urdf_passing.cpp:136:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kminimal_uninitializable_robot_urdf[m[K’ is not a member of ‘[01m[Kros2_control_test_assets[m[K’; did you mean ‘[01m[Kminimal_unitilizable_robot_urdf[m[K’?
+  136 |   msg.data = ros2_control_test_assets::[01;31m[Kminimal_uninitializable_robot_urdf[m[K;
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                        [32m[Kminimal_unitilizable_robot_urdf[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:41:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+   41 | using ros2_control_test_assets::[01;31m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:46:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+   46 | using ros2_control_test_assets::[01;31m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:51:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+   51 | using ros2_control_test_assets::[01;31m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:[m[K In member function ‘[01m[Kvoid TestControllerManagerHWManagementSrvs::list_hardware_components_and_check(const std::vector<unsigned char, std::allocator<unsigned char> >&, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::vector<std::vector<bool, std::allocator<bool> > > >&, const std::vector<std::vector<std::vector<bool, std::allocator<bool> > > >&)[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:138:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_ACTUATOR_HARDWARE_NAME[m[K’?
+  138 |           [01;31m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[0], hw_state_labels[0]);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |           [32m[KTEST_ACTUATOR_HARDWARE_NAME[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:150:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_SENSOR_HARDWARE_NAME[m[K’?
+  150 |           [01;31m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[1], hw_state_labels[1]);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |           [32m[KTEST_SENSOR_HARDWARE_NAME[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:162:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_SYSTEM_HARDWARE_NAME[m[K’?
+  162 |           [01;31m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[2], hw_state_labels[2]);
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |           [32m[KTEST_SYSTEM_HARDWARE_NAME[m[K
+gmake[2]: *** [CMakeFiles/test_controller_manager_urdf_passing.dir/build.make:76: CMakeFiles/test_controller_manager_urdf_passing.dir/test/test_controller_manager_urdf_passing.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:522: CMakeFiles/test_controller_manager_urdf_passing.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/test_hardware_management_srvs.dir/build.make:76: CMakeFiles/test_hardware_management_srvs.dir/test/test_hardware_management_srvs.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:635: CMakeFiles/test_hardware_management_srvs.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

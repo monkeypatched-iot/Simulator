@@ -1,0 +1,127 @@
+[0.030s] Invoking command in '/home/prashun/ros2_ws/build/controller_manager': AMENT_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:/home/prashun/ros2_ws/install/uno:/opt/ros/humble LD_LIBRARY_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing/lib:/home/prashun/ros2_ws/install/controller_interface/lib:/home/prashun/ros2_ws/install/hardware_interface/lib:/home/prashun/ros2_ws/install/ros2_control_test_assets/lib:/home/prashun/ros2_ws/install/joint_limits/lib:/home/prashun/ros2_ws/install/controller_manager_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/prashun/ros2_ws/install/controller_manager_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/prashun/ros2_ws/src/ros2_control/controller_manager -DCMAKE_INSTALL_PREFIX=/home/prashun/ros2_ws/install/controller_manager
+[0.044s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.217s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.229s] -- Found ament_index_cpp: 1.4.0 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[0.230s] -- Found controller_interface: 4.18.0 (/home/prashun/ros2_ws/install/controller_interface/share/controller_interface/cmake)
+[0.272s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.275s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.282s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.295s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.312s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.537s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.539s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.565s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.576s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.596s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.608s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.620s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.713s] -- Found controller_manager_msgs: 4.18.0 (/home/prashun/ros2_ws/install/controller_manager_msgs/share/controller_manager_msgs/cmake)
+[0.735s] -- Found diagnostic_updater: 4.0.0 (/opt/ros/humble/share/diagnostic_updater/cmake)
+[0.764s] -- Found ament_cmake_gmock: 1.3.10 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[0.765s] -- Found ros2_control_test_assets: 4.18.0 (/home/prashun/ros2_ws/install/ros2_control_test_assets/share/ros2_control_test_assets/cmake)
+[0.769s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[0.774s] -- Found ament_cmake_gtest: 1.3.10 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[0.774s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.789s] -- Found ament_cmake_pytest: 1.3.10 (/opt/ros/humble/share/ament_cmake_pytest/cmake)
+[1.389s] -- Configuring done
+[1.532s] -- Generating done
+[1.537s] -- Build files have been written to: /home/prashun/ros2_ws/build/controller_manager
+[1.550s] Invoked command in '/home/prashun/ros2_ws/build/controller_manager' returned '0': AMENT_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:/home/prashun/ros2_ws/install/uno:/opt/ros/humble LD_LIBRARY_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing/lib:/home/prashun/ros2_ws/install/controller_interface/lib:/home/prashun/ros2_ws/install/hardware_interface/lib:/home/prashun/ros2_ws/install/ros2_control_test_assets/lib:/home/prashun/ros2_ws/install/joint_limits/lib:/home/prashun/ros2_ws/install/controller_manager_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/prashun/ros2_ws/install/controller_manager_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/prashun/ros2_ws/src/ros2_control/controller_manager -DCMAKE_INSTALL_PREFIX=/home/prashun/ros2_ws/install/controller_manager
+[1.552s] Invoking command in '/home/prashun/ros2_ws/build/controller_manager': AMENT_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:/home/prashun/ros2_ws/install/uno:/opt/ros/humble LD_LIBRARY_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing/lib:/home/prashun/ros2_ws/install/controller_interface/lib:/home/prashun/ros2_ws/install/hardware_interface/lib:/home/prashun/ros2_ws/install/ros2_control_test_assets/lib:/home/prashun/ros2_ws/install/joint_limits/lib:/home/prashun/ros2_ws/install/controller_manager_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/prashun/ros2_ws/install/controller_manager_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/prashun/ros2_ws/build/controller_manager -- -j8 -l8
+[1.601s] [35m[1mConsolidate compiler generated dependencies of target gmock_main[0m
+[1.603s] [35m[1mConsolidate compiler generated dependencies of target gmock[0m
+[1.619s] [  5%] Built target gmock_main
+[1.621s] [  7%] Built target ament_generate_version_header__controller_manager
+[1.624s] [ 15%] Built target gmock
+[1.630s] [ 15%] Built target ament_cmake_python_symlink_controller_manager
+[1.633s] [ 15%] Built target ament_cmake_python_symlink_controller_manager_setup
+[1.636s] [35m[1mConsolidate compiler generated dependencies of target controller_manager[0m
+[1.662s] [ 21%] Built target controller_manager
+[1.678s] [35m[1mConsolidate compiler generated dependencies of target test_controller[0m
+[1.679s] [35m[1mConsolidate compiler generated dependencies of target ros2_control_node[0m
+[1.682s] [35m[1mConsolidate compiler generated dependencies of target test_controller_failed_init[0m
+[1.694s] [35m[1mConsolidate compiler generated dependencies of target test_chainable_controller[0m
+[1.696s] [35m[1mConsolidate compiler generated dependencies of target test_controller_with_interfaces[0m
+[1.727s] [ 26%] Built target test_controller_failed_init
+[1.727s] [ 31%] Built target test_controller
+[1.733s] [ 36%] Built target test_chainable_controller
+[1.735s] [ 42%] Built target ros2_control_node
+[1.741s] [ 47%] Built target test_controller_with_interfaces
+[1.756s] [35m[1mConsolidate compiler generated dependencies of target test_controller_manager_with_namespace[0m
+[1.765s] [35m[1mConsolidate compiler generated dependencies of target test_controller_manager[0m
+[1.783s] [35m[1mConsolidate compiler generated dependencies of target test_load_controller[0m
+[1.789s] [35m[1mConsolidate compiler generated dependencies of target test_controller_manager_hardware_error_handling[0m
+[1.818s] [ 50%] [32mBuilding CXX object CMakeFiles/test_controllers_chaining_with_controller_manager.dir/test/test_controllers_chaining_with_controller_manager.cpp.o[0m
+[1.820s] [ 55%] Built target test_controller_manager_with_namespace
+[1.839s] [ 57%] [32mBuilding CXX object CMakeFiles/test_controller_manager_srvs.dir/test/test_controller_manager_srvs.cpp.o[0m
+[1.854s] [ 63%] Built target test_controller_manager
+[1.857s] [ 68%] Built target test_load_controller
+[1.888s] [35m[1mConsolidate compiler generated dependencies of target test_controller_manager_urdf_passing[0m
+[1.889s] [ 73%] Built target test_controller_manager_hardware_error_handling
+[1.921s] [35m[1mConsolidate compiler generated dependencies of target test_release_interfaces[0m
+[1.933s] [35m[1mConsolidate compiler generated dependencies of target test_spawner_unspawner[0m
+[1.940s] [35m[1mConsolidate compiler generated dependencies of target test_hardware_management_srvs[0m
+[1.975s] [ 76%] [32mBuilding CXX object CMakeFiles/test_controller_manager_urdf_passing.dir/test/test_controller_manager_urdf_passing.cpp.o[0m
+[2.004s] [ 78%] [32mBuilding CXX object CMakeFiles/test_hardware_management_srvs.dir/test/test_hardware_management_srvs.cpp.o[0m
+[2.024s] [ 84%] Built target test_release_interfaces
+[2.070s] [ 89%] Built target test_spawner_unspawner
+[2.097s] running egg_info
+[2.099s] writing controller_manager.egg-info/PKG-INFO
+[2.099s] writing dependency_links to controller_manager.egg-info/dependency_links.txt
+[2.100s] writing entry points to controller_manager.egg-info/entry_points.txt
+[2.100s] writing top-level names to controller_manager.egg-info/top_level.txt
+[2.104s] reading manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.105s] writing manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.184s] [ 89%] Built target ament_cmake_python_build_controller_manager_egg
+[2.204s] running install_scripts
+[2.209s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.209s]   warnings.warn(
+[2.265s] running egg_info
+[2.267s] writing controller_manager.egg-info/PKG-INFO
+[2.268s] writing dependency_links to controller_manager.egg-info/dependency_links.txt
+[2.268s] writing entry points to controller_manager.egg-info/entry_points.txt
+[2.269s] writing top-level names to controller_manager.egg-info/top_level.txt
+[2.273s] reading manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.274s] writing manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.278s] Installing hardware_spawner script to scripts
+[2.278s] Installing spawner script to scripts
+[2.279s] Installing unspawner script to scripts
+[2.363s] [ 89%] Built target ament_cmake_python_build_controller_manager_scripts
+[9.082s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_controller_manager_urdf_passing.cpp:[m[K In member function ‘[01m[Kvirtual void TestControllerManagerWithTestableCM_expect_to_failure_when_invalid_urdf_is_given_and_be_able_to_submit_new_robot_description_Test::TestBody()[m[K’:
+[9.082s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_controller_manager_urdf_passing.cpp:136:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kminimal_uninitializable_robot_urdf[m[K’ is not a member of ‘[01m[Kros2_control_test_assets[m[K’; did you mean ‘[01m[Kminimal_unitilizable_robot_urdf[m[K’?
+[9.082s]   136 |   msg.data = ros2_control_test_assets::[01;31m[Kminimal_uninitializable_robot_urdf[m[K;
+[9.082s]       |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.082s]       |                                        [32m[Kminimal_unitilizable_robot_urdf[m[K
+[9.249s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:41:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+[9.250s]    41 | using ros2_control_test_assets::[01;31m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K;
+[9.250s]       |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.250s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:46:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+[9.250s]    46 | using ros2_control_test_assets::[01;31m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K;
+[9.250s]       |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.250s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:51:33:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K’ has not been declared in ‘[01m[Kros2_control_test_assets[m[K’
+[9.250s]    51 | using ros2_control_test_assets::[01;31m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K;
+[9.250s]       |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.360s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:[m[K In member function ‘[01m[Kvoid TestControllerManagerHWManagementSrvs::list_hardware_components_and_check(const std::vector<unsigned char, std::allocator<unsigned char> >&, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::vector<std::vector<bool, std::allocator<bool> > > >&, const std::vector<std::vector<std::vector<bool, std::allocator<bool> > > >&)[m[K’:
+[9.361s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:138:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_ACTUATOR_HARDWARE_NAME[m[K’?
+[9.361s]   138 |           [01;31m[KTEST_ACTUATOR_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[0], hw_state_labels[0]);
+[9.361s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.361s]       |           [32m[KTEST_ACTUATOR_HARDWARE_NAME[m[K
+[9.390s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:150:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_SENSOR_HARDWARE_NAME[m[K’?
+[9.390s]   150 |           [01;31m[KTEST_SENSOR_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[1], hw_state_labels[1]);
+[9.390s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.391s]       |           [32m[KTEST_SENSOR_HARDWARE_NAME[m[K
+[9.409s] [01m[K/home/prashun/ros2_ws/src/ros2_control/controller_manager/test/test_hardware_management_srvs.cpp:162:11:[m[K [01;31m[Kerror: [m[K‘[01m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K’ was not declared in this scope; did you mean ‘[01m[KTEST_SYSTEM_HARDWARE_NAME[m[K’?
+[9.409s]   162 |           [01;31m[KTEST_SYSTEM_HARDWARE_PLUGIN_NAME[m[K, hw_state_ids[2], hw_state_labels[2]);
+[9.409s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.410s]       |           [32m[KTEST_SYSTEM_HARDWARE_NAME[m[K
+[12.563s] gmake[2]: *** [CMakeFiles/test_controller_manager_urdf_passing.dir/build.make:76: CMakeFiles/test_controller_manager_urdf_passing.dir/test/test_controller_manager_urdf_passing.cpp.o] Error 1
+[12.563s] gmake[1]: *** [CMakeFiles/Makefile2:522: CMakeFiles/test_controller_manager_urdf_passing.dir/all] Error 2
+[12.564s] gmake[1]: *** Waiting for unfinished jobs....
+[13.236s] gmake[2]: *** [CMakeFiles/test_hardware_management_srvs.dir/build.make:76: CMakeFiles/test_hardware_management_srvs.dir/test/test_hardware_management_srvs.cpp.o] Error 1
+[13.236s] gmake[1]: *** [CMakeFiles/Makefile2:635: CMakeFiles/test_hardware_management_srvs.dir/all] Error 2
+[16.504s] [ 92%] [32m[1mLinking CXX executable test_controllers_chaining_with_controller_manager[0m
+[18.029s] [ 92%] Built target test_controllers_chaining_with_controller_manager
+[22.972s] [ 94%] [32m[1mLinking CXX executable test_controller_manager_srvs[0m
+[25.134s] [ 94%] Built target test_controller_manager_srvs
+[25.135s] gmake: *** [Makefile:146: all] Error 2
+[25.137s] Invoked command in '/home/prashun/ros2_ws/build/controller_manager' returned '2': AMENT_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing:/home/prashun/ros2_ws/install/controller_interface:/home/prashun/ros2_ws/install/hardware_interface:/home/prashun/ros2_ws/install/ros2_control_test_assets:/home/prashun/ros2_ws/install/joint_limits:/home/prashun/ros2_ws/install/controller_manager_msgs:/home/prashun/ros2_ws/install/uno:/opt/ros/humble LD_LIBRARY_PATH=/home/prashun/ros2_ws/install/hardware_interface_testing/lib:/home/prashun/ros2_ws/install/controller_interface/lib:/home/prashun/ros2_ws/install/hardware_interface/lib:/home/prashun/ros2_ws/install/ros2_control_test_assets/lib:/home/prashun/ros2_ws/install/joint_limits/lib:/home/prashun/ros2_ws/install/controller_manager_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/prashun/ros2_ws/install/controller_manager_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/prashun/ros2_ws/build/controller_manager -- -j8 -l8

@@ -1,0 +1,277 @@
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:[m[K In member function ‘[01m[Kstd::vector<std::shared_ptr<const hardware_interface::StateInterface> > hardware_interface::Actuator::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:211:74:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> hardware_interface::ActuatorInterface::export_state_interfaces()[m[K’ is deprecated: Replaced by vector<StateInterface::ConstSharedPtr> on_export_state_interfaces() method. Exporting is handled by the Framework. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  211 |   std::vector<StateInterface> interfaces = [01;35m[Kimpl_->export_state_interfaces()[m[K;
+      |                                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator.hpp:22[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:176:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  176 |   [01;36m[Kexport_state_interfaces[m[K()
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:[m[K In member function ‘[01m[Kstd::vector<std::shared_ptr<hardware_interface::CommandInterface> > hardware_interface::Actuator::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:239:78:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> hardware_interface::ActuatorInterface::export_command_interfaces()[m[K’ is deprecated: Replaced by vector<CommandInterface::SharedPtr> on_export_command_interfaces() method. Exporting is handled by the Framework. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  239 |   std::vector<CommandInterface> interfaces = [01;35m[Kimpl_->export_command_interfaces()[m[K;
+      |                                              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator.hpp:22[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/actuator.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:253:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  253 |   [01;36m[Kexport_command_interfaces[m[K()
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/sensor.cpp:[m[K In member function ‘[01m[Kstd::vector<std::shared_ptr<const hardware_interface::StateInterface> > hardware_interface::Sensor::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/sensor.cpp:210:74:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> hardware_interface::SensorInterface::export_state_interfaces()[m[K’ is deprecated: Replaced by vector<StateInterface::ConstSharedPtr> on_export_state_interfaces() method. Exporting is handled by the Framework. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  210 |   std::vector<StateInterface> interfaces = [01;35m[Kimpl_->export_state_interfaces()[m[K;
+      |                                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/sensor.hpp:24[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/sensor.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/sensor_interface.hpp:160:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  160 |   [01;36m[Kexport_state_interfaces[m[K()
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/resource_manager.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/resource_manager.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:[m[K In constructor ‘[01m[Khardware_interface::LoanedCommandInterface::LoanedCommandInterface(hardware_interface::CommandInterface&)[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:33:54:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::LoanedCommandInterface::LoanedCommandInterface(hardware_interface::CommandInterface&, hardware_interface::LoanedCommandInterface::Deleter&&)[m[K’ is deprecated: Replaced by the new version using shared_ptr [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   33 |   : LoanedCommandInterface(command_interface, nullptr[01;35m[K)[m[K
+      |                                                      [01;35m[K^[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:37:66:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [[deprecated("Replaced by the new version using shared_ptr")]] [01;36m[KLoanedCommandInterface[m[K(
+      |                                                                  [01;36m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/resource_manager.hpp:27[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/resource_manager.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:[m[K In constructor ‘[01m[Khardware_interface::LoanedStateInterface::LoanedStateInterface(const hardware_interface::StateInterface&)[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:33:50:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::LoanedStateInterface::LoanedStateInterface(const hardware_interface::StateInterface&, hardware_interface::LoanedStateInterface::Deleter&&)[m[K’ is deprecated: Replaced by the new version using shared_ptr [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   33 |   : LoanedStateInterface(state_interface, nullptr[01;35m[K)[m[K
+      |                                                  [01;35m[K^[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:37:66:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [[deprecated("Replaced by the new version using shared_ptr")]] [01;36m[KLoanedStateInterface[m[K(
+      |                                                                  [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/mock_components/generic_system.hpp:23[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:17[m[K:
+/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = hardware_interface::StateInterface; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::StateInterface][m[K’:
+[01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = hardware_interface::StateInterface; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::StateInterface; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<hardware_interface::StateInterface>][m[K’
+[01m[K/usr/include/c++/11/bits/vector.tcc:115:30:[m[K   required from ‘[01m[Kstd::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::StateInterface; _Alloc = std::allocator<hardware_interface::StateInterface>; std::vector<_Tp, _Alloc>::reference = hardware_interface::StateInterface&][m[K’
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:634:28:[m[K   required from ‘[01m[Kbool mock_components::GenericSystem::get_interface(const string&, const std::vector<std::__cxx11::basic_string<char> >&, const string&, size_t, std::vector<std::vector<double> >&, std::vector<HandleType>&) [with HandleType = hardware_interface::StateInterface; std::string = std::__cxx11::basic_string<char>; size_t = long unsigned int][m[K’
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:227:25:[m[K   required from here
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/11/string:41[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/mock_components/generic_system.hpp:20[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:17[m[K:
+[01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+  162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+      |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/mock_components/generic_system.hpp:23[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:17[m[K:
+/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = hardware_interface::CommandInterface; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::CommandInterface][m[K’:
+[01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = hardware_interface::CommandInterface; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::CommandInterface; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<hardware_interface::CommandInterface>][m[K’
+[01m[K/usr/include/c++/11/bits/vector.tcc:115:30:[m[K   required from ‘[01m[Kstd::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, double*}; _Tp = hardware_interface::CommandInterface; _Alloc = std::allocator<hardware_interface::CommandInterface>; std::vector<_Tp, _Alloc>::reference = hardware_interface::CommandInterface&][m[K’
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:634:28:[m[K   required from ‘[01m[Kbool mock_components::GenericSystem::get_interface(const string&, const std::vector<std::__cxx11::basic_string<char> >&, const string&, size_t, std::vector<std::vector<double> >&, std::vector<HandleType>&) [with HandleType = hardware_interface::CommandInterface; std::string = std::__cxx11::basic_string<char>; size_t = long unsigned int][m[K’
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:270:25:[m[K   required from here
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/11/string:41[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/mock_components/generic_system.hpp:20[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/mock_components/generic_system.cpp:17[m[K:
+[01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+  162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+      |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:[m[K In member function ‘[01m[Kstd::vector<std::shared_ptr<const hardware_interface::StateInterface> > hardware_interface::System::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:209:74:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> hardware_interface::SystemInterface::export_state_interfaces()[m[K’ is deprecated: Replaced by vector<StateInterface::ConstSharedPtr> on_export_state_interfaces() method. Exporting is handled by the Framework. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  209 |   std::vector<StateInterface> interfaces = [01;35m[Kimpl_->export_state_interfaces()[m[K;
+      |                                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system.hpp:24[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:196:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  196 |   [01;36m[Kexport_state_interfaces[m[K()
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:[m[K In member function ‘[01m[Kstd::vector<std::shared_ptr<hardware_interface::CommandInterface> > hardware_interface::System::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:237:78:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> hardware_interface::SystemInterface::export_command_interfaces()[m[K’ is deprecated: Replaced by vector<CommandInterface::SharedPtr> on_export_command_interfaces() method. Exporting is handled by the Framework. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  237 |   std::vector<CommandInterface> interfaces = [01;35m[Kimpl_->export_command_interfaces()[m[K;
+      |                                              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system.hpp:24[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/src/system.cpp:15[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:288:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  288 |   [01;36m[Kexport_command_interfaces[m[K()
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:16[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:[m[K In member function ‘[01m[Kvirtual void TestHandle_command_interface_Test::TestBody()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:33:63:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   33 |   CommandInterface interface{JOINT_NAME, FOO_INTERFACE, &value[01;36m[K}[m[K;
+      |                                                               [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:16[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:[m[K In member function ‘[01m[Kvirtual void TestHandle_state_interface_Test::TestBody()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_handle.cpp:42:61:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   42 |   StateInterface interface{JOINT_NAME, FOO_INTERFACE, &value[01;36m[K}[m[K;
+      |                                                             [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator.hpp:22[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:25[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_components::DummyActuator::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:86:69:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   86 |       "joint1", hardware_interface::HW_IF_POSITION, &position_state_[01;36m[K)[m[K);
+      |                                                                     [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator.hpp:22[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:25[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> test_components::DummyActuator::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_component_interfaces.cpp:98:71:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   98 |       "joint1", hardware_interface::HW_IF_VELOCITY, &velocity_command_[01;36m[K)[m[K);
+      |                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:17[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_hardware_components::TestSingleJointActuator::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:76:71:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   76 |       joint_name, hardware_interface::HW_IF_POSITION, &position_state_[01;36m[K)[m[K);
+      |                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/actuator_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:17[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> test_hardware_components::TestSingleJointActuator::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_single_joint_actuator.cpp:89:73:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   89 |       joint_name, hardware_interface::HW_IF_POSITION, &position_command_[01;36m[K)[m[K);
+      |                                                                         [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/sensor_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_force_torque_sensor.cpp:19[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_force_torque_sensor.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_hardware_components::TestForceTorqueSensor::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_force_torque_sensor.cpp:62:72:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   62 |       hardware_interface::StateInterface(sensor_name, "fx", &values_.fx[01;36m[K)[m[K);
+      |                                                                        [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:18[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_hardware_components::TestTwoJointSystem::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:77:28:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   77 |         &position_state_[i][01;36m[K)[m[K);
+      |                            [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:18[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> test_hardware_components::TestTwoJointSystem::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_two_joint_system.cpp:90:30:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   90 |         &position_command_[i][01;36m[K)[m[K);
+      |                              [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/sensor_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_imu_sensor.cpp:24[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_imu_sensor.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_hardware_components::TestIMUSensor::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_imu_sensor.cpp:70:87:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   70 |       hardware_interface::StateInterface(sensor_name, "orientation.x", &orientation_.x[01;36m[K)[m[K);
+      |                                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/mock_components/test_generic_system.cpp:24[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:[m[K In constructor ‘[01m[Khardware_interface::LoanedCommandInterface::LoanedCommandInterface(hardware_interface::CommandInterface&)[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:33:54:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::LoanedCommandInterface::LoanedCommandInterface(hardware_interface::CommandInterface&, hardware_interface::LoanedCommandInterface::Deleter&&)[m[K’ is deprecated: Replaced by the new version using shared_ptr [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   33 |   : LoanedCommandInterface(command_interface, nullptr[01;35m[K)[m[K
+      |                                                      [01;35m[K^[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_command_interface.hpp:37:66:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [[deprecated("Replaced by the new version using shared_ptr")]] [01;36m[KLoanedCommandInterface[m[K(
+      |                                                                  [01;36m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/mock_components/test_generic_system.cpp:25[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:[m[K In constructor ‘[01m[Khardware_interface::LoanedStateInterface::LoanedStateInterface(const hardware_interface::StateInterface&)[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:33:50:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::LoanedStateInterface::LoanedStateInterface(const hardware_interface::StateInterface&, hardware_interface::LoanedStateInterface::Deleter&&)[m[K’ is deprecated: Replaced by the new version using shared_ptr [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   33 |   : LoanedStateInterface(state_interface, nullptr[01;35m[K)[m[K
+      |                                                  [01;35m[K^[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/loaned_state_interface.hpp:37:66:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [[deprecated("Replaced by the new version using shared_ptr")]] [01;36m[KLoanedStateInterface[m[K(
+      |                                                                  [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:19[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:139:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  139 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> test_hardware_components::TestSystemCommandModes::export_state_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:84:28:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::StateInterface::StateInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+   84 |         &position_state_[i][01;36m[K)[m[K);
+      |                            [01;36m[K^[m[K
+In file included from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/system_interface.hpp:26[m[K,
+                 from [01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:19[m[K:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:[m[K In constructor ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:162:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Khardware_interface::Handle::Handle(const string&, const string&, double*)[m[K’ is deprecated: Use InterfaceDescription for initializing the Interface [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  162 |   using Handle::[01;35m[KHandle[m[K;
+      |                 [01;35m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/include/hardware_interface/handle.hpp:37:3:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 |   [01;36m[KHandle[m[K(
+      |   [01;36m[K^~~~~~[m[K
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::CommandInterface> test_hardware_components::TestSystemCommandModes::export_command_interfaces()[m[K’:
+[01m[K/home/prashun/ros2_ws/src/ros2_control/hardware_interface/test/test_hardware_components/test_system_with_command_modes.cpp:103:30:[m[K [01;36m[Knote: [m[Ksynthesized method ‘[01m[Khardware_interface::CommandInterface::CommandInterface(const string&, const string&, double*) [inherited from hardware_interface::Handle][m[K’ first required here
+  103 |         &position_command_[i][01;36m[K)[m[K);
+      |                              [01;36m[K^[m[K

@@ -1,0 +1,2 @@
+Invoking command in '/home/prashun/ros2_ws/build/uno': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/build/uno -- -j8 -l8
+Invoked command in '/home/prashun/ros2_ws/build/uno' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/build/uno -- -j8 -l8

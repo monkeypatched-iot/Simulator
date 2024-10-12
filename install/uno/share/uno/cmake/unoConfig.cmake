@@ -1,0 +1,1 @@
+/home/prashun/ros2_ws/build/uno/ament_cmake_core/unoConfig.cmake

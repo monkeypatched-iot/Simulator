@@ -1,0 +1,21 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/controller.yaml
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/sdf/empty_room.sdf
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/urdf/diff_drive_robot.urdf
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/launch/display.robot.launch.py
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/package_run_dependencies/uno
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/parent_prefix_path/uno
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.sh
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.dsv
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.bash
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.sh
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.zsh
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.dsv
+-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/package.dsv
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/packages/uno
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig.cmake
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig-version.cmake
+-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/package.xml

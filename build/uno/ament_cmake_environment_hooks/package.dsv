@@ -1,0 +1,4 @@
+source;share/uno/local_setup.bash
+source;share/uno/local_setup.dsv
+source;share/uno/local_setup.sh
+source;share/uno/local_setup.zsh
