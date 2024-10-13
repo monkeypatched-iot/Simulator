@@ -3,32 +3,14 @@
   <world name="default">
     <model name="room">
       <static>true</static>
-
-      <plugin filename="libignition-gazebo-contact-system.so"
-              name="ignition::gazebo::systems::Contact">
-      </plugin>
-      <plugin filename="libignition-gazebo-touchplugin-system.so"
-            name="ignition::gazebo::systems::TouchPlugin">
-            <target>vehicle_blue</target>
-            <namespace>wall</namespace>
-            <time>0.001</time>
-            <enabled>true</enabled>
-      </plugin>
-      <plugin
-            filename="ignition-gazebo-scene-broadcaster-system"
-            name="ignition::gazebo::systems::SceneBroadcaster">
-      </plugin>
-      <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
-            <render_engine>ogre2</render_engine>
-      </plugin>
-      <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
-      </plugin>
-      <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
-      </plugin>
       <physics name="1ms" type="ignored">
             <max_step_size>0.001</max_step_size>
             <real_time_factor>1.0</real_time_factor>
       </physics>
+      <plugin
+            filename="ignition-gazebo-scene-broadcaster-system"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+      </plugin>
         <plugin
             filename="libignition-gazebo-physics-system.so"
             name="ignition::gazebo::systems::Physics">
@@ -40,6 +22,16 @@
         <plugin
             filename="libignition-gazebo-scene-broadcaster-system.so"
             name="ignition::gazebo::systems::SceneBroadcaster">
+        </plugin>
+        <plugin filename="libignition-gazebo-contact-system.so"
+              name="ignition::gazebo::systems::Contact">
+        </plugin>
+        <plugin filename="libignition-gazebo-touchplugin-system.so"
+              name="ignition::gazebo::systems::TouchPlugin">
+              <target>vehicle_blue</target>
+              <namespace>wall</namespace>
+              <time>0.001</time>
+              <enabled>true</enabled>
         </plugin>
   
       <!-- Create the floor -->

@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <robot name="diff_drive_robot">
 
+     <!--............................... SENSOR PLUGINS ..................................... -->
+    <gazebo>
+         <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+        <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
+        </plugin>
+          <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
+      </plugin>
+    </gazebo>
     <!--............................... MATERIALS ..................................... -->
     <material name="blue">
         <color rgba="0 0.4 0.5 1"/>
@@ -261,14 +271,31 @@
         <origin xyz="0 0 1.2" rpy="0 0 0" />
     </joint>
 
+<!--............................... GAZEBO DRIVER ..................................... -->
+    <gazebo>
+        <plugin
+            filename="libignition-gazebo-diff-drive-system.so"
+            name="ignition::gazebo::systems::DiffDrive">
+            <left_joint>virtual_front_wheel_joint</left_joint>
+            <right_joint>virtual_rear_wheel_joint</right_joint>
+            <wheel_separation>0.2</wheel_separation>
+            <wheel_radius>0.03</wheel_radius>
+            <odom_publish_frequency>1</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+        </plugin>
+    </gazebo>
+
+    <!--............................... CONTROLLER .................................... -->
+
     <ros2_control name="IgnitionSystem" type="system">
         <hardware>
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
             <param name="calculate_dynamics">true</param>
         </hardware>
         <joint name="virtual_front_wheel_joint">
-            <command_interface name="position"/>
+            <command_interface name="velocity"/>
             <state_interface name="position"/>
+            <state_interface name="velocity"/>
         </joint>
         <joint name="virtual_rear_wheel_joint">
             <command_interface name="velocity"/>

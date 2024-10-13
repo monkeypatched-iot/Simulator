@@ -134,7 +134,7 @@ def generate_launch_description():
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["bicycle_steering_controller", "--controller-manager", "/controller_manager"],
+                arguments=["diffbot_base_controller", "--controller-manager", "/controller_manager"],
             ),
             Node(
                 package="rviz2",
