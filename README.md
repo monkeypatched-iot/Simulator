@@ -1,9 +1,8 @@
-    # for real robot add 
+# for real robot add 
 
     <!--............................... CONTROLLER .................................... -->
 
     <ros2_control name="IgnitionSystem" type="system">
-    
         <hardware>
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
         </hardware>
@@ -78,3 +77,32 @@
             <focalLength>0</focalLength>
             <hackBaseline>0</hackBaseline>
             </plugin>
+
+
+### Add the following to the launch file 
+
+        Node(
+            package="controller_manager",
+            executable="ros2_control_node",
+            parameters=[controller_yaml] 
+        ),
+        TimerAction(
+            period=10.0,
+            actions=[
+              # Joint state broadcaster Controller 
+             Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["joint_state_broadcaster"],
+            ),
+             # bycicle drive controller
+            Node(
+                package="controller_manager",
+                executable="spawner",
+                arguments=["diffbot_base_controller", "--controller-manager", "/controller_manager"],
+            )
+        ]),
+
+# to start robot
+
+ ros2 topic pub --once /cmd_vel geometry_msgs/Twist '{linear:  {x: 0.12, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 1.0}}'

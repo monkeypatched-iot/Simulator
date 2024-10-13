@@ -133,25 +133,4 @@ def generate_launch_description():
             output="both",
             parameters=[{'robot_description': robot_description}],
         ),
-        Node(
-            package="controller_manager",
-            executable="ros2_control_node",
-            parameters=[controller_yaml] 
-        ),
-        TimerAction(
-            period=10.0,
-            actions=[
-              # Joint state broadcaster Controller 
-             Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=["joint_state_broadcaster"],
-            ),
-             # bycicle drive controller
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=["diffbot_base_controller", "--controller-manager", "/controller_manager"],
-            )
-        ]),
     ])
