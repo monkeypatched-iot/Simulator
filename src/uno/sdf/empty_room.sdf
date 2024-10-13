@@ -1,7 +1,21 @@
 <?xml version="1.0" ?>
-<sdf version="1.6">
-  <world name="default">
-    <model name="room">
+<sdf version="1.7">
+    <world name="empty_world">
+        <light type="directional" name="sun">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+        
+           <model name="room">
       <static>true</static>
       <physics name="1ms" type="ignored">
             <max_step_size>0.001</max_step_size>
@@ -145,5 +159,18 @@
         </visual>
       </link>
     </model>
-  </world>
-</sdf>
+        <!--............................... GAZEBO DRIVER ..................................... -->
+    <gazebo>
+        <plugin
+            filename="libignition-gazebo-diff-drive-system.so"
+            name="ignition::gazebo::systems::DiffDrive">
+            <left_joint>joint_chassis_front_left_wheel</left_joint>
+            <right_joint>joint_chassis_front_right_wheel</right_joint>
+            <wheel_separation>0.2</wheel_separation>
+            <wheel_radius>0.03</wheel_radius>
+            <odom_publish_frequency>1</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+        </plugin>
+    </gazebo>
+    </world>
+</sdf> 

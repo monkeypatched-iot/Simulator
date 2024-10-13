@@ -100,10 +100,18 @@ def generate_launch_description():
         Node(
             package='ros_gz_bridge',
             executable='parameter_bridge',
-            arguments=["/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist",
-            "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
-            "/odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
-            "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU"],
+            arguments=[
+                "/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist",
+                "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
+                "/odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
+                "/tf@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V",
+                "/kinect/camera/color/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
+                "/kinect/camera/depth/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
+                "/kinect/camera/color/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
+                "/kinect/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
+                "/kinect/camera/depth/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked",
+                "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU"
+            ],
             output='screen'
         ),
         Node(
