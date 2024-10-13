@@ -3,35 +3,10 @@
 
      <!--............................... SENSOR PLUGINS ..................................... -->
     <gazebo>
-         <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
-            <render_engine>ogre2</render_engine>
-        </plugin>
-        <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
-        </plugin>
-          <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
-      </plugin>
-      <plugin
-            filename="ignition-gazebo-scene-broadcaster-system"
-            name="ignition::gazebo::systems::SceneBroadcaster">
-      </plugin>
-        <plugin
-            filename="libignition-gazebo-user-commands-system.so"
-            name="ignition::gazebo::systems::UserCommands">
-        </plugin>
-        <plugin
-            filename="libignition-gazebo-scene-broadcaster-system.so"
-            name="ignition::gazebo::systems::SceneBroadcaster">
-        </plugin>
-        <plugin filename="libignition-gazebo-contact-system.so"
-              name="ignition::gazebo::systems::Contact">
-        </plugin>
-        <plugin filename="libignition-gazebo-touchplugin-system.so"
-              name="ignition::gazebo::systems::TouchPlugin">
-              <target>vehicle_blue</target>
-              <namespace>wall</namespace>
-              <time>0.001</time>
-              <enabled>true</enabled>
-        </plugin>
+      <plugin 
+      filename="ignition-gazebo-joint-state-publisher-system" 
+      name="ignition::gazebo::systems::JointStatePublisher">
+    </plugin>
     </gazebo>
     <!--............................... MATERIALS ..................................... -->
     <material name="blue">
@@ -198,12 +173,38 @@
         </inertial>
     </link>
 
+    <link name="camera_link">
+        <visual>
+            <origin xyz="0 -0.12 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.003" length="0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.003" length="0.01"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <inertia ixx="0.00004667" iyy="0.00004667" izz="0.00009" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+
     <!-- Joints -->
     <joint name="joint_base_chassis" type="fixed">
         <parent link="map"/>
         <child link="chassis_link"/>
          <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
     </joint>    
+
+     <joint name="joint_chassis_camera" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
 
     <joint name="joint_chassis_front_right_wheel" type="continuous">
         <parent link="chassis_link"/>
@@ -296,52 +297,23 @@
 
    <!-- ........................... CAMERA PLUGIN ................................... -->
        <gazebo reference="camera_link">
-        <sensor type="depth" name="kinect_camera">
-            <camera name="cam">
-                <save enabled="true">
-                    <path>/tmp/camera_save_tutorial</path>
-                </save>
-                <horizontal_fov>1.3962634</horizontal_fov>
-                <image>
-                    <width>640</width>
-                    <height>480</height>
-                    <format>R8B8G8</format>
-                </image>
-                <clip>
-                    <near>0.02</near>
-                    <far>300</far>
-                </clip>
-                <noise>
-                    <type>gaussian</type>
-                    <mean>0.0</mean>
-                    <stddev>0.007</stddev>
-                </noise>
-            </camera>
+        <sensor name="rgbd_camera" type="rgbd_camera">
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>rgbd_camera</topic>
+          <enable_metrics>true</enable_metrics>
         </sensor>
-        <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
-            <baseline>0.2</baseline>
-            <alwaysOn>true</alwaysOn>
-            <!-- Keep this zero, update_rate in the parent <sensor> tag
-                will control the frame rate. -->
-            <updateRate>20.0</updateRate>
-            <cameraName>camera_ir</cameraName>
-            <imageTopicName>/kinect/camera/color/image_raw</imageTopicName>
-            <cameraInfoTopicName>/kinect/camera/color/camera_info</cameraInfoTopicName>
-            <depthImageTopicName>/kinect/camera/depth/image_raw</depthImageTopicName>
-            <depthImageCameraInfoTopicName>/kinect/camera/depth/camera_info</depthImageCameraInfoTopicName>
-            <pointCloudTopicName>/kinect/camera/depth/points</pointCloudTopicName>
-            <frameName>depth_camera_link</frameName>
-            <pointCloudCutoff>0.05</pointCloudCutoff>
-            <distortionK1>0</distortionK1>
-            <distortionK2>0</distortionK2>
-            <distortionK3>0</distortionK3>
-            <distortionT1>0</distortionT1>
-            <distortionT2>0</distortionT2>
-            <CxPrime>0</CxPrime>
-            <Cx>0</Cx>
-            <Cy>0</Cy>
-            <focalLength>0</focalLength>
-            <hackBaseline>0</hackBaseline>
-            </plugin>
-        </gazebo>
+    </gazebo>
 </robot>

@@ -1,4 +1,5 @@
 /home/prashun/ros2_ws/install/uno/share/uno/config/controller.yaml
+/home/prashun/ros2_ws/install/uno/share/uno/config/rgbd_cam.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/config/robot.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/sdf/empty_room.sdf
 /home/prashun/ros2_ws/install/uno/share/uno/urdf/diff_drive_robot.urdf
