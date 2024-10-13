@@ -32,27 +32,7 @@
     <link name="world"></link>
   
     <!-- Chassis link -->
-    <link name="base_link">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.2 0.12 0.01"/>
-            </geometry>
-            <material name="red">
-                <color rgba="1 0 0 1"/>
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.2 0.12 0.01"/>
-            </geometry>
-        </collision>
-        <inertial>
-            <mass value="0.4"/>
-            <inertia ixx="0.00048333" iyy="0.0013367" izz="0.0018133" ixy="0" ixz="0" iyz="0"/>
-        </inertial>
-    </link>
+    <link name="base_link"></link>
 
     <!-- Chassis link -->
     <link name="chassis_link">
@@ -276,8 +256,8 @@
         <plugin
             filename="libignition-gazebo-diff-drive-system.so"
             name="ignition::gazebo::systems::DiffDrive">
-            <left_joint>virtual_front_wheel_joint</left_joint>
-            <right_joint>virtual_rear_wheel_joint</right_joint>
+            <left_joint>joint_chassis_front_left_wheel</left_joint>
+            <right_joint>joint_chassis_front_right_wheel</right_joint>
             <wheel_separation>0.2</wheel_separation>
             <wheel_radius>0.03</wheel_radius>
             <odom_publish_frequency>1</odom_publish_frequency>
@@ -292,12 +272,12 @@
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
             <param name="calculate_dynamics">true</param>
         </hardware>
-        <joint name="virtual_front_wheel_joint">
+        <joint name="joint_chassis_front_left_wheel">
             <command_interface name="velocity"/>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
         </joint>
-        <joint name="virtual_rear_wheel_joint">
+        <joint name="joint_chassis_front_right_wheel">
             <command_interface name="velocity"/>
             <state_interface name="velocity"/>
             <state_interface name="position"/>
