@@ -8,32 +8,9 @@
             <real_time_factor>1.0</real_time_factor>
       </physics>
       <plugin
-            filename="ignition-gazebo-scene-broadcaster-system"
-            name="ignition::gazebo::systems::SceneBroadcaster">
-      </plugin>
-        <plugin
             filename="libignition-gazebo-physics-system.so"
             name="ignition::gazebo::systems::Physics">
         </plugin>
-        <plugin
-            filename="libignition-gazebo-user-commands-system.so"
-            name="ignition::gazebo::systems::UserCommands">
-        </plugin>
-        <plugin
-            filename="libignition-gazebo-scene-broadcaster-system.so"
-            name="ignition::gazebo::systems::SceneBroadcaster">
-        </plugin>
-        <plugin filename="libignition-gazebo-contact-system.so"
-              name="ignition::gazebo::systems::Contact">
-        </plugin>
-        <plugin filename="libignition-gazebo-touchplugin-system.so"
-              name="ignition::gazebo::systems::TouchPlugin">
-              <target>vehicle_blue</target>
-              <namespace>wall</namespace>
-              <time>0.001</time>
-              <enabled>true</enabled>
-        </plugin>
-  
       <!-- Create the floor -->
       <link name="floor">
         <collision name="floor_collision">

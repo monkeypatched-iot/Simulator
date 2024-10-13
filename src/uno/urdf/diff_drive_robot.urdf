@@ -10,6 +10,29 @@
         </plugin>
           <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
       </plugin>
+      <plugin
+            filename="ignition-gazebo-scene-broadcaster-system"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+      </plugin>
+    
+        <plugin
+            filename="libignition-gazebo-user-commands-system.so"
+            name="ignition::gazebo::systems::UserCommands">
+        </plugin>
+        <plugin
+            filename="libignition-gazebo-scene-broadcaster-system.so"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+        </plugin>
+        <plugin filename="libignition-gazebo-contact-system.so"
+              name="ignition::gazebo::systems::Contact">
+        </plugin>
+        <plugin filename="libignition-gazebo-touchplugin-system.so"
+              name="ignition::gazebo::systems::TouchPlugin">
+              <target>vehicle_blue</target>
+              <namespace>wall</namespace>
+              <time>0.001</time>
+              <enabled>true</enabled>
+        </plugin>
     </gazebo>
     <!--............................... MATERIALS ..................................... -->
     <material name="blue">
@@ -28,7 +51,8 @@
     <link name="imu_link"></link>
     
     <!-- baselink -->
-    <link name="base_link"></link>
+    <link name="base_link">
+    </link>
 
     <!-- Chassis link -->
     <link name="chassis_link">
@@ -176,13 +200,10 @@
     </link>
 
     <!-- Joints -->
-
-  
-
     <joint name="joint_base_chassis" type="fixed">
         <parent link="base_link"/>
         <child link="chassis_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+         <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
     </joint>    
 
     <joint name="joint_chassis_front_right_wheel" type="continuous">
@@ -260,9 +281,9 @@
     <!--............................... CONTROLLER .................................... -->
 
     <ros2_control name="IgnitionSystem" type="system">
+    
         <hardware>
             <plugin>ign_ros2_control/IgnitionSystem</plugin>
-            <param name="calculate_dynamics">true</param>
         </hardware>
         <joint name="joint_chassis_front_left_wheel">
             <command_interface name="velocity"/>
