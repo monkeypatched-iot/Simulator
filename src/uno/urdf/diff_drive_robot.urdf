@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <robot name="diff_drive_robot">
 
-     <!--............................... SENSOR PLUGINS ..................................... -->
+    <!--............................... SENSOR PLUGINS ..................................... -->
     <gazebo>
-      <plugin 
-      filename="ignition-gazebo-joint-state-publisher-system" 
-      name="ignition::gazebo::systems::JointStatePublisher">
-    </plugin>
+        <plugin 
+            filename="ignition-gazebo-joint-state-publisher-system" 
+            name="ignition::gazebo::systems::JointStatePublisher">
+        </plugin>
     </gazebo>
+
     <!--............................... MATERIALS ..................................... -->
     <material name="blue">
         <color rgba="0 0.4 0.5 1"/>
@@ -17,16 +18,14 @@
     </material>
 
     <!--............................... LINKS ..................................... -->
-
     <!-- camera link -->
     <link name="camera_link_optical"></link>
 
-    <!--  imu link -->
+    <!-- imu link -->
     <link name="imu_link"></link>
     
     <!-- baselink -->
-    <link name="map">
-    </link>
+    <link name="map"></link>
 
     <!-- Chassis link -->
     <link name="chassis_link">
@@ -132,9 +131,9 @@
         </inertial>
     </link>
 
-   <!-- Virtual rear wheel -->
+    <!-- Virtual rear wheel -->
     <link name="virtual_rear_wheel">
-          <visual>
+        <visual>
             <origin xyz="0 0 0" rpy="0 1.5708 0"/>
             <geometry>
                 <cylinder radius="0.03" length="0.01"/>
@@ -196,10 +195,10 @@
     <joint name="joint_base_chassis" type="fixed">
         <parent link="map"/>
         <child link="chassis_link"/>
-         <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
+        <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
     </joint>    
 
-     <joint name="joint_chassis_camera" type="continuous">
+    <joint name="joint_chassis_camera" type="continuous">
         <parent link="chassis_link"/>
         <child link="camera_link"/>
         <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
@@ -235,16 +234,16 @@
     </joint>
 
     <joint name="virtual_rear_wheel_joint" type="continuous">
-      <parent link="chassis_link"/>
-      <child link="virtual_rear_wheel"/>
-      <origin xyz="-0.06 0 0" rpy="0 0 1.5708"/>
-      <axis xyz="1 0 0"/>
-      <limit effort="100.0" velocity="100.0"/>
-      <dynamics damping="0.2"/>
+        <parent link="chassis_link"/>
+        <child link="virtual_rear_wheel"/>
+        <origin xyz="-0.06 0 0" rpy="0 0 1.5708"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="100.0" velocity="100.0"/>
+        <dynamics damping="0.2"/>
     </joint>
 
     <joint name="virtual_front_wheel_joint" type="revolute">
-        <parent link="chassis_link"/> <!-- Corrected the link name -->
+        <parent link="chassis_link"/> 
         <child link="virtual_front_wheel"/>
         <origin xyz="-0.06 0 0" rpy="0 0 1.5708"/>
         <axis xyz="0 0 1"/>
@@ -254,7 +253,7 @@
 
     <joint name="camera_optical_joint" type="fixed">
         <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
-         <parent link="chassis_link"/>
+        <parent link="chassis_link"/>
         <child link="camera_link_optical" />
     </joint>
     
@@ -264,7 +263,7 @@
         <origin xyz="0 0 1.2" rpy="0 0 0" />
     </joint>
 
-<!--............................... GAZEBO DRIVER ..................................... -->
+    <!--............................... GAZEBO DRIVER ..................................... -->
     <gazebo>
         <plugin
             filename="libignition-gazebo-diff-drive-system.so"
@@ -276,10 +275,26 @@
             <odom_publish_frequency>1</odom_publish_frequency>
             <topic>cmd_vel</topic>
         </plugin>
+
+        <plugin filename="gz-sim-linearbatteryplugin-system"
+          name="gz::sim::systems::LinearBatteryPlugin">
+            <battery_name>linear_battery</battery_name>
+            <voltage>12.592</voltage>
+            <open_circuit_voltage_constant_coef>12.592</open_circuit_voltage_constant_coef>
+            <capacity>1.2009</capacity>
+            <power_load>6.6</power_load>
+            <fix_issue_225>true</fix_issue_225>
+            <enable_recharge>true</enable_recharge>
+            <!-- charging I = c / t, discharging I = P / V,
+            charging I should be > discharging I -->
+            <charging_time>3.0</charging_time>
+            <!-- Consumer-specific -->
+            <power_load>2.1</power_load>
+            <recharge_by_topic>true</recharge_by_topic>
+      </plugin>
     </gazebo>
 
     <!--............................... IMU PLUGIN ..................................... -->
-
     <gazebo reference="imu_frame">
         <sensor name="imu" type="imu">
             <always_on>true</always_on>
@@ -294,25 +309,69 @@
         </sensor>
     </gazebo>
 
-   <!-- ........................... CAMERA PLUGIN ................................... -->
-       <gazebo reference="camera_link">
+    <!-- ........................... CAMERA PLUGIN ................................... -->
+    <gazebo reference="camera_link">
         <sensor name="rgbd_camera" type="rgbd_camera">
-          <camera>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>320</width>
-              <height>240</height>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>30</update_rate>
-          <visualize>true</visualize>
-          <topic>rgbd_camera</topic>
-          <enable_metrics>true</enable_metrics>
+            <camera>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>320</width>
+                    <height>240</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+            <topic>rgbd_camera</topic>
+            <enable_metrics>true</enable_metrics>
+        </sensor>
+
+        <sensor name="visible_2d" type="boundingbox_camera">
+            <topic>boxes_visible_2d</topic>
+            <camera>
+                <box_type>visible_2d</box_type>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>600</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>10</far>
+                </clip>
+                <save enabled="true">
+                    <path>bounding_box_visible_2d_data</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+        </sensor>
+
+        <sensor name="3d" type="boundingbox_camera">
+            <topic>boxes_3d</topic>
+            <camera>
+                <box_type>3d</box_type>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>600</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>10</far>
+                </clip>
+                <save enabled="true">
+                    <path>bounding_box_3d_data</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
         </sensor>
 
         <sensor name="instance_segmentation_camera" type="segmentation">
@@ -321,22 +380,21 @@
                 <segmentation_type>instance</segmentation_type>
                 <horizontal_fov>1.57</horizontal_fov>
                 <image>
-                <width>800</width>
-                <height>600</height>
+                    <width>800</width>
+                    <height>600</height>
                 </image>
                 <clip>
-                <near>0.1</near>
-                <far>100</far>
+                    <near>0.1</near>
+                    <far>100</far>
                 </clip>
                 <save enabled="true">
-                <path>segmentation_data/instance_camera</path>
+                    <path>segmentation_data/instance_camera</path>
                 </save>
             </camera>
             <always_on>1</always_on>
             <update_rate>30</update_rate>
             <visualize>true</visualize>
         </sensor>
-
-
     </gazebo>
+
 </robot>
