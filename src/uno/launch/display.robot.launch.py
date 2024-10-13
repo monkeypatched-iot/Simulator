@@ -55,7 +55,8 @@ def generate_launch_description():
     position_x = LaunchConfiguration("position_x")
     position_y = LaunchConfiguration("position_y")
     orientation_yaw = LaunchConfiguration("orientation_yaw")
-
+    gui = LaunchConfiguration("gui")
+    
     # Read the URDF file
     with open(urdf_file_path, 'r') as urdf_file:
         robot_description = urdf_file.read()
@@ -99,10 +100,10 @@ def generate_launch_description():
         Node(
             package='ros_gz_bridge',
             executable='parameter_bridge',
-            arguments=['/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-                       '/rgbd_camera/image@sensor_msgs/msg/Image@gz.msgs.Image',
-                       '/rgbd_camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image',
-                        '/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU'],
+            arguments=["/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist",
+            "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
+            "/odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
+            "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU"],
             output='screen'
         ),
         Node(
@@ -144,5 +145,13 @@ def generate_launch_description():
                 executable="spawner",
                 arguments=["diffbot_base_controller", "--controller-manager", "/controller_manager"],
             ),
+            Node(
+                package="rviz2",
+                executable="rviz2",
+                name="rviz2",
+                output="log",
+                arguments=["-d", rviz_config_file],
+                condition=IfCondition(gui),
+            )
         ]),
     ])
