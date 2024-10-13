@@ -152,14 +152,6 @@ def generate_launch_description():
                 package="controller_manager",
                 executable="spawner",
                 arguments=["diffbot_base_controller", "--controller-manager", "/controller_manager"],
-            ),
-            Node(
-                package="rviz2",
-                executable="rviz2",
-                name="rviz2",
-                output="log",
-                arguments=["-d", rviz_config_file],
-                condition=IfCondition(gui),
             )
         ]),
     ])

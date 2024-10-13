@@ -278,7 +278,6 @@
         </plugin>
     </gazebo>
 
-    
     <!--............................... IMU PLUGIN ..................................... -->
 
     <gazebo reference="imu_frame">
@@ -315,5 +314,29 @@
           <topic>rgbd_camera</topic>
           <enable_metrics>true</enable_metrics>
         </sensor>
+
+        <sensor name="instance_segmentation_camera" type="segmentation">
+            <topic>panoptic</topic>
+            <camera>
+                <segmentation_type>instance</segmentation_type>
+                <horizontal_fov>1.57</horizontal_fov>
+                <image>
+                <width>800</width>
+                <height>600</height>
+                </image>
+                <clip>
+                <near>0.1</near>
+                <far>100</far>
+                </clip>
+                <save enabled="true">
+                <path>segmentation_data/instance_camera</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+        </sensor>
+
+
     </gazebo>
 </robot>
