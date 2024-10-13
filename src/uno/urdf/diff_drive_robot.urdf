@@ -31,7 +31,7 @@
     <!-- This first link called "world" is empty -->
     <link name="world"></link>
   
-    <!-- Chassis link -->
+    <!-- baselink -->
     <link name="base_link"></link>
 
     <!-- Chassis link -->
