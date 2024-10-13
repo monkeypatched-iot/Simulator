@@ -27,10 +27,6 @@
     <!--  imu link -->
     <link name="imu_link"></link>
     
-   
-    <!-- This first link called "world" is empty -->
-    <link name="world"></link>
-  
     <!-- baselink -->
     <link name="base_link"></link>
 
@@ -181,11 +177,7 @@
 
     <!-- Joints -->
 
-    <joint name="base_joint" type="fixed">
-        <origin xyz="1.5 1.0 0" rpy="0 0 0"/>
-        <parent link="world"/>
-        <child link="base_link"/>        
-    </joint>
+  
 
     <joint name="joint_base_chassis" type="fixed">
         <parent link="base_link"/>
