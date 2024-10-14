@@ -51,4 +51,13 @@ install(DIRECTORY meshes/box/meshes
 install(DIRECTORY meshes/box/thumbnails
   DESTINATION share/${PROJECT_NAME}/meshes/box/thumbnails)
 
+install(DIRECTORY meshes/man/meshes
+  DESTINATION share/${PROJECT_NAME}/meshes/man/meshes)
+
+install(DIRECTORY meshes/man/thumbnails
+  DESTINATION share/${PROJECT_NAME}/meshes/man/thumbnails)
+
+install(DIRECTORY meshes/man/materials
+  DESTINATION share/${PROJECT_NAME}/meshes/man/materiials)
+
 ament_package()

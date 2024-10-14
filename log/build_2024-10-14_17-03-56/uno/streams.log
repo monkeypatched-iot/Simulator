@@ -1,0 +1,106 @@
+[0.009s] Invoking command in '/home/prashun/ros2_ws/build/uno': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/build/uno -- -j8 -l8
+[0.029s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.132s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.138s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.162s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.163s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.168s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.177s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.187s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.214s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.215s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.294s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.336s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.406s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.407s] -- Added test 'lint_cmake' to check CMake code style
+[0.408s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.411s] -- Added test 'xmllint' to check XML markup files
+[0.411s] -- Configuring done
+[0.414s] -- Generating done
+[0.416s] -- Build files have been written to: /home/prashun/ros2_ws/build/uno
+[0.443s] Invoked command in '/home/prashun/ros2_ws/build/uno' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/build/uno -- -j8 -l8
+[0.468s] Invoking command in '/home/prashun/ros2_ws/build/uno': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/prashun/ros2_ws/build/uno
+[0.473s] -- Install configuration: ""
+[0.474s] -- Execute custom install script
+[0.474s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/controller.yaml
+[0.474s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/rgbd_cam.rviz
+[0.474s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/robot.rviz
+[0.475s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/sdf/simple_warehouse.sdf
+[0.475s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/urdf/diff_drive_robot.urdf
+[0.475s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/launch/display.robot.launch.py
+[0.476s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.dae
+[0.476s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.png
+[0.476s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/model.config
+[0.476s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/model.sdf
+[0.476s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/1.png
+[0.477s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/2.png
+[0.477s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/3.png
+[0.477s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/4.png
+[0.477s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/5.png
+[0.477s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/eyebrow001-unmodified.png
+[0.485s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/eyebrow001.png
+[0.492s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/green_eye.png
+[0.498s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/jeans01_normals.png
+[0.505s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/jeans_basic_diffuse.png
+[0.511s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/male02_diffuse_black-unmodified.png
+[0.517s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/male02_diffuse_black.png
+[0.523s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/teeth.png
+[0.529s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/tshirt02_normals.png
+[0.536s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/tshirt02_texture.png
+[0.542s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materials/textures/young_lightskinned_male_diffuse.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/walking.dae
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/model.config
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/model.sdf
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/1.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/2.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/3.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/4.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/5.png
+[0.549s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/Box_paper_04_1_Base_Color.png
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/shelf_big_movai.dae
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/model.config
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/model.sdf
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/thumbnails/rack-1.png
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/meshes/Box_paper_04_1_Base_Color.png
+[0.550s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/meshes/shelf_big_movai.dae
+[0.551s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/thumbnails/thumbnails/rack-1.png
+[0.551s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/meshes/cardboard_box.dae
+[0.551s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/meshes/cardboard_box.png
+[0.551s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/1.png
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/2.png
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/3.png
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/4.png
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/5.png
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/walking.dae
+[0.552s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/1.png
+[0.553s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/2.png
+[0.553s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/3.png
+[0.553s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/4.png
+[0.553s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/5.png
+[0.553s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/eyebrow001-unmodified.png
+[0.560s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/eyebrow001.png
+[0.566s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/green_eye.png
+[0.572s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/jeans01_normals.png
+[0.578s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/jeans_basic_diffuse.png
+[0.584s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/male02_diffuse_black-unmodified.png
+[0.590s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/male02_diffuse_black.png
+[0.596s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/teeth.png
+[0.602s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/tshirt02_normals.png
+[0.609s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/tshirt02_texture.png
+[0.615s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/materiials/materials/textures/young_lightskinned_male_diffuse.png
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/package_run_dependencies/uno
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/parent_prefix_path/uno
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.sh
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.dsv
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.sh
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.dsv
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.bash
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.sh
+[0.621s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.zsh
+[0.622s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.dsv
+[0.622s] -- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/package.dsv
+[0.629s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/packages/uno
+[0.629s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig.cmake
+[0.629s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig-version.cmake
+[0.629s] -- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/package.xml
+[0.631s] Invoked command in '/home/prashun/ros2_ws/build/uno' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/prashun/ros2_ws/build/uno

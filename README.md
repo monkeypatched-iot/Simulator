@@ -106,3 +106,50 @@
 # to start robot
 
  ros2 topic pub --once /cmd_vel geometry_msgs/Twist '{linear:  {x: 0.12, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 1.0}}'
+
+
+   
+
+        <sensor name="3d" type="boundingbox_camera">
+            <topic>boxes_3d</topic>
+            <camera>
+                <box_type>3d</box_type>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>600</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>10</far>
+                </clip>
+                <save enabled="true">
+                    <path>bounding_box_3d_data</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+        </sensor>
+
+        <sensor name="instance_segmentation_camera" type="segmentation">
+            <topic>panoptic</topic>
+            <camera>
+                <segmentation_type>instance</segmentation_type>
+                <horizontal_fov>1.57</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>600</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+                <save enabled="true">
+                    <path>segmentation_data/instance_camera</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+        </sensor>

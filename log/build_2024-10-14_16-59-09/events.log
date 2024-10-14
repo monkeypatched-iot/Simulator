@@ -1,0 +1,121 @@
+[0.000000] (-) TimerEvent: {}
+[0.000151] (uno) JobQueued: {'identifier': 'uno', 'dependencies': OrderedDict()}
+[0.000285] (uno) JobStarted: {'identifier': 'uno'}
+[0.006411] (uno) JobProgress: {'identifier': 'uno', 'progress': 'cmake'}
+[0.006877] (uno) JobProgress: {'identifier': 'uno', 'progress': 'build'}
+[0.007416] (uno) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/prashun/ros2_ws/build/uno', '--', '-j8', '-l8'], 'cwd': '/home/prashun/ros2_ws/build/uno', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'prashun'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/prashun'), ('OLDPWD', '/home/prashun'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1578'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/prashun/ros2_ws/install:/home/prashun/ros2_foxy_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'prashun'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'prashun'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/prashun-ASUS-TUF-Gaming-F15-FX506LH-FX566LH:@/tmp/.ICE-unix/1549,unix/prashun-ASUS-TUF-Gaming-F15-FX506LH-FX566LH:/tmp/.ICE-unix/1549'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83668d03_4c19_48ee_822d_d17b9ff59339'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2GIPV2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.1373'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/prashun/ros2_ws/install/uno:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/prashun/ros2_ws/build/uno'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/prashun/ros2_ws/install/uno:/opt/ros/humble')]), 'shell': False}
+[0.026942] (uno) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099387] (-) TimerEvent: {}
+[0.115257] (uno) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.120489] (uno) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.143222] (uno) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.145131] (uno) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.149505] (uno) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.156833] (uno) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.166599] (uno) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.194275] (uno) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.195334] (uno) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.199445] (-) TimerEvent: {}
+[0.277942] (uno) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.299540] (-) TimerEvent: {}
+[0.321336] (uno) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.399685] (-) TimerEvent: {}
+[0.410896] (uno) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.411285] (uno) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.411789] (uno) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[0.413886] (uno) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.415071] (uno) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.419668] (uno) StdoutLine: {'line': b'-- Generating done\n'}
+[0.421290] (uno) StdoutLine: {'line': b'-- Build files have been written to: /home/prashun/ros2_ws/build/uno\n'}
+[0.452474] (uno) CommandEnded: {'returncode': 0}
+[0.469387] (uno) JobProgress: {'identifier': 'uno', 'progress': 'install'}
+[0.477272] (uno) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/prashun/ros2_ws/build/uno'], 'cwd': '/home/prashun/ros2_ws/build/uno', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'prashun'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/prashun'), ('OLDPWD', '/home/prashun'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1578'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/prashun/ros2_ws/install:/home/prashun/ros2_foxy_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'prashun'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'prashun'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/prashun-ASUS-TUF-Gaming-F15-FX506LH-FX566LH:@/tmp/.ICE-unix/1549,unix/prashun-ASUS-TUF-Gaming-F15-FX506LH-FX566LH:/tmp/.ICE-unix/1549'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83668d03_4c19_48ee_822d_d17b9ff59339'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2GIPV2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.1373'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/prashun/ros2_ws/install/uno:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/prashun/ros2_ws/build/uno'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/prashun/ros2_ws/install/uno:/opt/ros/humble')]), 'shell': False}
+[0.484584] (uno) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.485270] (uno) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.486068] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/controller.yaml\n'}
+[0.486255] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/rgbd_cam.rviz\n'}
+[0.486368] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/config/robot.rviz\n'}
+[0.486499] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/sdf/simple_warehouse.sdf\n'}
+[0.486701] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/urdf/diff_drive_robot.urdf\n'}
+[0.486993] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/launch/display.robot.launch.py\n'}
+[0.487516] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.dae\n'}
+[0.487682] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.png\n'}
+[0.487797] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/model.config\n'}
+[0.487911] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/model.sdf\n'}
+[0.488022] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/1.png\n'}
+[0.488319] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/2.png\n'}
+[0.488440] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/3.png\n'}
+[0.488538] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/4.png\n'}
+[0.488625] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/5.png\n'}
+[0.488719] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/eyebrow001-unmodified.png\n'}
+[0.497123] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/eyebrow001.png\n'}
+[0.499770] (-) TimerEvent: {}
+[0.504855] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/green_eye.png\n'}
+[0.512861] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/jeans01_normals.png\n'}
+[0.519582] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/jeans_basic_diffuse.png\n'}
+[0.527856] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/male02_diffuse_black-unmodified.png\n'}
+[0.536930] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/male02_diffuse_black.png\n'}
+[0.544994] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/teeth.png\n'}
+[0.552361] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/tshirt02_normals.png\n'}
+[0.559933] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/tshirt02_texture.png\n'}
+[0.566458] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/walking.dae\n'}
+[0.572714] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/young_lightskinned_male_diffuse.png\n'}
+[0.578992] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/model.config\n'}
+[0.585524] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/model.sdf\n'}
+[0.591942] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/1.png\n'}
+[0.598420] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/2.png\n'}
+[0.599871] (-) TimerEvent: {}
+[0.604784] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/3.png\n'}
+[0.611186] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/4.png\n'}
+[0.617667] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/5.png\n'}
+[0.624884] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/Box_paper_04_1_Base_Color.png\n'}
+[0.625094] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/shelf_big_movai.dae\n'}
+[0.625226] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/model.config\n'}
+[0.625299] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/model.sdf\n'}
+[0.625381] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/thumbnails/rack-1.png\n'}
+[0.625496] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/meshes/Box_paper_04_1_Base_Color.png\n'}
+[0.625644] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/meshes/meshes/shelf_big_movai.dae\n'}
+[0.625901] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/rack/thumbnails/thumbnails/rack-1.png\n'}
+[0.626123] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/meshes/cardboard_box.dae\n'}
+[0.626251] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/meshes/cardboard_box.png\n'}
+[0.626506] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/1.png\n'}
+[0.626653] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/2.png\n'}
+[0.626779] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/3.png\n'}
+[0.626952] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/4.png\n'}
+[0.627075] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/thumbnails/thumbnails/5.png\n'}
+[0.627416] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/eyebrow001-unmodified.png\n'}
+[0.635475] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/eyebrow001.png\n'}
+[0.642512] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/green_eye.png\n'}
+[0.649140] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/jeans01_normals.png\n'}
+[0.655873] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/jeans_basic_diffuse.png\n'}
+[0.663938] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/male02_diffuse_black-unmodified.png\n'}
+[0.670769] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/male02_diffuse_black.png\n'}
+[0.677352] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/teeth.png\n'}
+[0.684023] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/tshirt02_normals.png\n'}
+[0.690888] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/tshirt02_texture.png\n'}
+[0.697798] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/walking.dae\n'}
+[0.699966] (-) TimerEvent: {}
+[0.704217] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/meshes/meshes/young_lightskinned_male_diffuse.png\n'}
+[0.711529] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/1.png\n'}
+[0.718065] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/2.png\n'}
+[0.724516] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/3.png\n'}
+[0.731517] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/4.png\n'}
+[0.738277] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/meshes/man/thumbnails/thumbnails/5.png\n'}
+[0.745606] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/package_run_dependencies/uno\n'}
+[0.745773] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/parent_prefix_path/uno\n'}
+[0.745871] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.sh\n'}
+[0.746033] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/ament_prefix_path.dsv\n'}
+[0.746215] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.sh\n'}
+[0.746395] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/environment/path.dsv\n'}
+[0.746567] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.bash\n'}
+[0.746736] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.sh\n'}
+[0.746907] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.zsh\n'}
+[0.747079] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/local_setup.dsv\n'}
+[0.747207] (uno) StdoutLine: {'line': b'-- Symlinking: /home/prashun/ros2_ws/install/uno/share/uno/package.dsv\n'}
+[0.754923] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/ament_index/resource_index/packages/uno\n'}
+[0.755205] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig.cmake\n'}
+[0.755334] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/cmake/unoConfig-version.cmake\n'}
+[0.755426] (uno) StdoutLine: {'line': b'-- Up-to-date symlink: /home/prashun/ros2_ws/install/uno/share/uno/package.xml\n'}
+[0.757359] (uno) CommandEnded: {'returncode': 0}
+[0.786598] (uno) JobEnded: {'identifier': 'uno', 'rc': 0}
+[0.787096] (-) EventReactorShutdown: {}
