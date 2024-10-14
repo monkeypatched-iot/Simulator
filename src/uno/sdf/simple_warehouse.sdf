@@ -25,10 +25,7 @@
       filename="gz-sim-scene-broadcaster-system"
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
-    <plugin 
-      filename="ignition-gazebo-imu-system" 
-      name="ignition::gazebo::systems::Imu">
-    </plugin>
+ 
 
 
   
