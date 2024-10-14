@@ -322,6 +322,21 @@ ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY 
 # install(DIRECTORY "launch/" "DESTINATION" "share/uno/launch")
 ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "launch/" "DESTINATION" "share/uno/launch")
 
+# install(DIRECTORY "meshes/" "DESTINATION" "share/uno/meshes")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/" "DESTINATION" "share/uno/meshes")
+
+# install(DIRECTORY "meshes/rack/meshes" "DESTINATION" "share/uno/meshes/rack/meshes")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/rack/meshes" "DESTINATION" "share/uno/meshes/rack/meshes")
+
+# install(DIRECTORY "meshes/rack/thumbnails" "DESTINATION" "share/uno/meshes/rack/thumbnails")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/rack/thumbnails" "DESTINATION" "share/uno/meshes/rack/thumbnails")
+
+# install(DIRECTORY "meshes/box/meshes" "DESTINATION" "share/uno/meshes/box/meshes")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/box/meshes" "DESTINATION" "share/uno/meshes/box/meshes")
+
+# install(DIRECTORY "meshes/box/thumbnails" "DESTINATION" "share/uno/meshes/box/thumbnails")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/box/thumbnails" "DESTINATION" "share/uno/meshes/box/thumbnails")
+
 # install(FILES "/home/prashun/ros2_ws/build/uno/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/uno" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/prashun/ros2_ws/src/uno" FILES "/home/prashun/ros2_ws/build/uno/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/uno" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 

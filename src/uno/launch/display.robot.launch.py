@@ -28,7 +28,7 @@ def generate_launch_description():
     sdf_file_path = os.path.join(
         '/home/prashun/ros2_ws/src/uno/',
         'sdf',
-        'empty_room.sdf'  # Replace with the actual name of your SDF file
+        'simple_warehouse.sdf'  # Replace with the actual name of your SDF file
     )
 
     # model name
@@ -41,7 +41,7 @@ def generate_launch_description():
     sdf_file_path = os.path.join(
         '/home/prashun/ros2_ws/src/uno/',
         'sdf',
-        'empty_room.sdf'  # Replace with the actual name of your SDF file
+        'simple_warehouse.sdf'  # Replace with the actual name of your SDF file
     )
 
     rviz_config_file = PathJoinSubstitution(
@@ -72,7 +72,7 @@ def generate_launch_description():
             description="Start Rviz2 and Joint State Publisher gui automatically \
         with this launch file.",
         ),
-        DeclareLaunchArgument("position_x", default_value="0.0"),
+        DeclareLaunchArgument("position_x", default_value="2.0"),
         DeclareLaunchArgument("position_y", default_value="0.0"),
         DeclareLaunchArgument("orientation_yaw", default_value="0.0"),
         # start gazebo sim

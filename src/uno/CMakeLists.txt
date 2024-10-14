@@ -36,5 +36,19 @@ install(DIRECTORY urdf/
 install(DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch)
 
+install(DIRECTORY meshes/
+  DESTINATION share/${PROJECT_NAME}/meshes)
+
+install(DIRECTORY meshes/rack/meshes
+  DESTINATION share/${PROJECT_NAME}/meshes/rack/meshes)
+
+install(DIRECTORY meshes/rack/thumbnails
+  DESTINATION share/${PROJECT_NAME}/meshes/rack/thumbnails)
+
+install(DIRECTORY meshes/box/meshes
+  DESTINATION share/${PROJECT_NAME}/meshes/box/meshes)
+
+install(DIRECTORY meshes/box/thumbnails
+  DESTINATION share/${PROJECT_NAME}/meshes/box/thumbnails)
 
 ament_package()

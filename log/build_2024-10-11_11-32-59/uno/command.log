@@ -1,1 +1,0 @@
-Invoking command in '/home/prashun/ros2_ws/build/uno': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/prashun/ros2_ws/src/uno -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/prashun/ros2_ws/install/uno
