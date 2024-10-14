@@ -26,6 +26,9 @@
     <!-- camera link -->
     <link name="camera_link_optical"></link>
 
+    <link name="instance_segmentation_camera_link_optical">
+    </link>
+
     <!-- imu link -->
     <link name="imu_link">
     <inertial>
@@ -201,6 +204,26 @@
         </inertial>
     </link>
 
+      <link name='instance_segmentation_camera_link'>
+        <visual>
+            <origin xyz="0 -0.12 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.003" length="0.01"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.003" length="0.01"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <inertia ixx="0.00004667" iyy="0.00004667" izz="0.00009" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+      </link>
+
+
     <!-- Joints -->
     <joint name="joint_base_chassis" type="fixed">
         <parent link="map"/>
@@ -214,6 +237,14 @@
         <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
+
+    <joint name="chasis_instance_camera_joint" type="continuous">
+        <origin xyz="0.06 0.065 0" rpy="0 0 0"/>
+        <parent link="chassis_link"/>
+        <child link="instance_segmentation_camera_link" />
+          <axis xyz="0 1 0"/>
+    </joint>
+    
 
    <joint name="joint_chassis_imu" type="continuous">
         <parent link="chassis_link"/>
@@ -273,7 +304,15 @@
         <parent link="chassis_link"/>
         <child link="camera_link_optical" />
     </joint>
-    
+
+
+    <joint name="instance_camera_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
+        <parent link="chassis_link"/>
+        <child link="instance_segmentation_camera_link_optical" />
+    </joint>
+
+   
     <!--............................... GAZEBO DRIVER ..................................... -->
     <gazebo>
         <plugin
@@ -338,6 +377,57 @@
             <visualize>true</visualize>
             <topic>rgbd_camera</topic>
             <enable_metrics>true</enable_metrics>
+        </sensor>
+    </gazebo>
+    <!-- ........................... INSTANCE SEGMENTATION CAMERA PLUGIN ................................... -->
+    <gazebo reference="instance_segmentation_camera_link">
+        <sensor name='instance_segmentation_camera' type='segmentation_camera'>
+          <pose>0 0 0 0 -0 0</pose>
+          <topic>panoptic</topic>
+          <update_rate>30</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <camera name='__default__'>
+            <pose>0 0 0 0 -0 0</pose>
+            <horizontal_fov>1.04700000000000001</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+              <format>RGB_INT8</format>
+              <anti_aliasing>4</anti_aliasing>
+            </image>
+            <camera_info_topic>__default__</camera_info_topic>
+            <trigger_topic></trigger_topic>
+            <triggered>false</triggered>
+            <clip>
+              <near>0.10000000000000001</near>
+              <far>100</far>
+            </clip>
+            <save enabled='false'>
+              <path>__default__</path>
+            </save>
+            <visibility_mask>4294967295</visibility_mask>
+            <noise>
+              <type>none</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+            <distortion>
+              <k1>0</k1>
+              <k2>0</k2>
+              <k3>0</k3>
+              <p1>0</p1>
+              <p2>0</p2>
+              <center>0.5 0.5</center>
+            </distortion>
+            <lens>
+              <type>stereographic</type>
+              <scale_to_hfov>true</scale_to_hfov>
+              <cutoff_angle>1.5708</cutoff_angle>
+              <env_texture_size>256</env_texture_size>
+            </lens>
+            <segmentation_type>instance</segmentation_type>
+            <optical_frame_id></optical_frame_id>
+          </camera>
         </sensor>
     </gazebo>
 </robot>

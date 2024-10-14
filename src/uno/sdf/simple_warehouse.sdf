@@ -26,10 +26,6 @@
       name="gz::sim::systems::SceneBroadcaster">
     </plugin>
  
-
-
-  
-  
     <gui fullscreen="0">
 
       <!-- 3D scene -->
@@ -166,8 +162,11 @@
         <topic>rgbd_camera/depth_image</topic>
         <topic_picker>false</topic_picker>
       </plugin>
+      <plugin name='Image Display' filename='ImageDisplay'>
+        <ignition-gui/>
+        <topic>panoptic/colored_map</topic>
+      </plugin>
     </gui>
-
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
@@ -181,7 +180,6 @@
       </attenuation>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
