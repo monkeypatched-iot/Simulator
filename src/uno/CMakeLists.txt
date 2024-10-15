@@ -36,6 +36,9 @@ install(DIRECTORY urdf/
 install(DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch)
 
+install(DIRECTORY scripts/
+  DESTINATION share/${PROJECT_NAME}/scripts)
+
 install(DIRECTORY meshes/
   DESTINATION share/${PROJECT_NAME}/meshes)
 

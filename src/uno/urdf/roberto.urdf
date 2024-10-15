@@ -1,0 +1,274 @@
+<robot name="diff_drive_robot">
+
+    <!--............................... SENSOR PLUGINS ..................................... -->
+    <gazebo>
+        <plugin 
+            filename="ignition-gazebo-joint-state-publisher-system" 
+            name="ignition::gazebo::systems::JointStatePublisher">
+        </plugin>
+
+        <plugin 
+            filename="ignition-gazebo-imu-system" 
+            name="ignition::gazebo::systems::Imu">
+        </plugin>
+    </gazebo>
+
+    <!--............................... MATERIALS ..................................... -->
+    <material name="blue">
+        <color rgba="0 0.4 0.5 1"/>
+    </material>
+    <material name="invisible">
+        <color rgba="0.0 0.0 0.0 0.0"/>
+    </material>
+
+    <!--............................... LINKS ..................................... -->
+    <link name="camera_link_optical"></link>
+
+    <link name="imu_link">
+        <inertial>
+            <mass value="0.4"/>
+            <inertia ixx="0.00048333" iyy="0.0013367" izz="0.0018133" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+    <link name="map"></link>
+
+    <link name="chassis_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.6 0.36 0.03"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.6 0.36 0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.2"/>
+            <inertia ixx="0.01303" iyy="0.03632" izz="0.02516" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    
+ <link name="front_right_wheel_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.6"/>
+        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+</link>
+
+<link name="front_left_wheel_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.6"/>
+        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+</link>
+
+<link name="rear_right_wheel_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.6"/>
+        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+</link>
+
+<link name="rear_left_wheel_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+        <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+            <cylinder radius="0.09" length="0.03"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <mass value="0.6"/>
+        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+</link>
+
+    
+    <link name="camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.009" length="0.03"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+            <geometry>
+                <cylinder radius="0.009" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6"/>
+            <inertia ixx="0.0000345" iyy="0.0000345" izz="0.0000243" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+
+    <!-- Joints -->
+    <joint name="joint_base_chassis" type="fixed">
+        <parent link="map"/>
+        <child link="chassis_link"/>
+        <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
+    </joint>    
+
+    <joint name="joint_chassis_camera" type="fixed"> <!-- Changed to fixed -->
+        <parent link="chassis_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.3 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
+    </joint>
+
+   <joint name="joint_chassis_imu" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="imu_link"/>
+        <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="joint_chassis_front_right_wheel" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="front_right_wheel_link"/>
+        <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <joint name="joint_chassis_front_left_wheel" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="front_left_wheel_link"/>
+        <origin xyz="0.18 -0.195 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <joint name="joint_chassis_rear_right_wheel" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="rear_right_wheel_link"/>
+        <origin xyz="-0.18 0.195 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <joint name="joint_chassis_rear_left_wheel" type="continuous">
+        <parent link="chassis_link"/>
+        <child link="rear_left_wheel_link"/>
+        <origin xyz="-0.18 -0.195 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="camera_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
+        <parent link="chassis_link"/>
+        <child link="camera_link_optical" />
+    </joint>
+   
+    <!--............................... GAZEBO DRIVER ..................................... -->
+    <gazebo>
+        <plugin
+            filename="libignition-gazebo-diff-drive-system.so"
+            name="ignition::gazebo::systems::DiffDrive">
+            <left_joint>joint_chassis_front_left_wheel</left_joint>
+            <right_joint>joint_chassis_front_right_wheel</right_joint>
+            <wheel_separation>0.6</wheel_separation>
+            <wheel_radius>0.09</wheel_radius>
+            <odom_publish_frequency>1</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+        </plugin>
+
+        <plugin filename="gz-sim-linearbatteryplugin-system"
+          name="gz::sim::systems::LinearBatteryPlugin">
+            <battery_name>linear_battery</battery_name>
+            <voltage>12.592</voltage>
+            <open_circuit_voltage_constant_coef>12.592</open_circuit_voltage_constant_coef>
+            <capacity>1.2009</capacity>
+            <power_load>6.6</power_load>
+            <fix_issue_225>true</fix_issue_225>
+            <enable_recharge>true</enable_recharge>
+            <charging_time>3.0</charging_time>
+            <power_load>2.1</power_load>
+            <recharge_by_topic>true</recharge_by_topic>
+        </plugin>
+    </gazebo>
+
+    <!--............................... IMU PLUGIN ..................................... -->
+    <gazebo reference="imu_link">
+        <sensor name="imu" type="imu">
+            <always_on>true</always_on>
+            <update_rate>5</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+        </sensor>
+    </gazebo>
+
+    <!-- ........................... CAMERA PLUGIN ................................... -->
+    <gazebo reference="camera_link">
+        <sensor name="rgbd_camera" type="rgbd_camera">
+            <camera>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>320</width>
+                    <height>240</height>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+                <save enabled="true">
+                    <path>rgbd</path>
+                </save>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+            <topic>rgbd_camera</topic>
+            <enable_metrics>true</enable_metrics>
+        </sensor>
+    </gazebo>
+</robot>

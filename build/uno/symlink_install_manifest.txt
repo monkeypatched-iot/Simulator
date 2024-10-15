@@ -2,7 +2,9 @@
 /home/prashun/ros2_ws/install/uno/share/uno/config/rgbd_cam.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/config/robot.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/sdf/simple_warehouse.sdf
+/home/prashun/ros2_ws/install/uno/share/uno/sdf/warehouse.sdf
 /home/prashun/ros2_ws/install/uno/share/uno/urdf/diff_drive_robot.urdf
+/home/prashun/ros2_ws/install/uno/share/uno/urdf/roberto.urdf
 /home/prashun/ros2_ws/install/uno/share/uno/launch/display.robot.launch.py
 /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.dae
 /home/prashun/ros2_ws/install/uno/share/uno/meshes/box/meshes/cardboard_box.png

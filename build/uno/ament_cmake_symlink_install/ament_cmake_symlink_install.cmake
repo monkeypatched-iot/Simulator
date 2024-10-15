@@ -322,6 +322,9 @@ ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY 
 # install(DIRECTORY "launch/" "DESTINATION" "share/uno/launch")
 ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "launch/" "DESTINATION" "share/uno/launch")
 
+# install(DIRECTORY "scripts/" "DESTINATION" "share/uno/scripts")
+ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "scripts/" "DESTINATION" "share/uno/scripts")
+
 # install(DIRECTORY "meshes/" "DESTINATION" "share/uno/meshes")
 ament_cmake_symlink_install_directory("/home/prashun/ros2_ws/src/uno" DIRECTORY "meshes/" "DESTINATION" "share/uno/meshes")
 

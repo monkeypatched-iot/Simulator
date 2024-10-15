@@ -28,29 +28,15 @@ def generate_launch_description():
     sdf_file_path = os.path.join(
         '/home/prashun/ros2_ws/src/uno/',
         'sdf',
-        'simple_warehouse.sdf'  # Replace with the actual name of your SDF file
+        'warehouse.sdf'  # Replace with the actual name of your SDF file
     )
 
     # model name
     pkg_project_bringup = get_package_share_directory('uno')
 
     # Path to your URDF file
-    urdf_file_path = os.path.join(pkg_project_bringup, 'urdf', 'diff_drive_robot.urdf')
+    urdf_file_path = os.path.join(pkg_project_bringup, 'urdf', 'roberto.urdf')
 
-     # load sdf
-    sdf_file_path = os.path.join(
-        '/home/prashun/ros2_ws/src/uno/',
-        'sdf',
-        'simple_warehouse.sdf'  # Replace with the actual name of your SDF file
-    )
-
-    rviz_config_file = PathJoinSubstitution(
-        [
-            FindPackageShare("uno"),
-            "config",
-            "robot.rviz",
-        ]
-    )
 
     position_x = LaunchConfiguration("position_x")
     position_y = LaunchConfiguration("position_y")
@@ -72,8 +58,8 @@ def generate_launch_description():
             description="Start Rviz2 and Joint State Publisher gui automatically \
         with this launch file.",
         ),
-        DeclareLaunchArgument("position_x", default_value="2.0"),
-        DeclareLaunchArgument("position_y", default_value="0.0"),
+        DeclareLaunchArgument("position_x", default_value="-3.0"),
+        DeclareLaunchArgument("position_y", default_value="-0.75"),
         DeclareLaunchArgument("orientation_yaw", default_value="0.0"),
         # start gazebo sim
          ExecuteProcess(
@@ -91,7 +77,7 @@ def generate_launch_description():
                 "-topic", "/robot_description",
                 "-name", "diff_drive_robot",
                 "-allow_renaming", "true",
-                "-z", "0.28",
+                "-z", "0.0",
                 "-x", position_x,
                 "-y", position_y,
                 "-Y", orientation_yaw

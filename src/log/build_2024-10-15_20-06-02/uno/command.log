@@ -1,0 +1,6 @@
+Invoking command in '/home/prashun/ros2_ws/src/build/uno': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/prashun/ros2_ws/src/uno -DCMAKE_INSTALL_PREFIX=/home/prashun/ros2_ws/src/install/uno
+Invoked command in '/home/prashun/ros2_ws/src/build/uno' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/prashun/ros2_ws/src/uno -DCMAKE_INSTALL_PREFIX=/home/prashun/ros2_ws/src/install/uno
+Invoking command in '/home/prashun/ros2_ws/src/build/uno': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/src/build/uno -- -j8 -l8
+Invoked command in '/home/prashun/ros2_ws/src/build/uno' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/prashun/ros2_ws/src/build/uno -- -j8 -l8
+Invoking command in '/home/prashun/ros2_ws/src/build/uno': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/prashun/ros2_ws/src/build/uno
+Invoked command in '/home/prashun/ros2_ws/src/build/uno' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/prashun/ros2_ws/src/build/uno
