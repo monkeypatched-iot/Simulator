@@ -58,8 +58,8 @@ def generate_launch_description():
             description="Start Rviz2 and Joint State Publisher gui automatically \
         with this launch file.",
         ),
-        DeclareLaunchArgument("position_x", default_value="-3.0"),
-        DeclareLaunchArgument("position_y", default_value="-0.75"),
+        DeclareLaunchArgument("position_x", default_value="-2.0"),
+        DeclareLaunchArgument("position_y", default_value="-0.5"),
         DeclareLaunchArgument("orientation_yaw", default_value="0.0"),
         # start gazebo sim
          ExecuteProcess(
@@ -77,7 +77,7 @@ def generate_launch_description():
                 "-topic", "/robot_description",
                 "-name", "diff_drive_robot",
                 "-allow_renaming", "true",
-                "-z", "0.0",
+                "-z", "0.28",
                 "-x", position_x,
                 "-y", position_y,
                 "-Y", orientation_yaw
@@ -91,12 +91,13 @@ def generate_launch_description():
                 "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
                 "/odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
                 "/tf@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V",
+                "/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan",
                 "/kinect/camera/color/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
                 "/kinect/camera/depth/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
                 "/kinect/camera/color/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
                 "/kinect/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
                 "/kinect/camera/depth/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked",
-                "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU"
+                "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU",
             ],
             output='screen'
         ),
@@ -119,4 +120,42 @@ def generate_launch_description():
             output="both",
             parameters=[{'robot_description': robot_description}],
         ),
+        #launch nav2 stack 
+        # ros2 launch nav2_bringup navigation_launch.py use_sim_time:=True
+        ExecuteProcess(
+            cmd=[[
+                FindExecutable(name='ros2'),
+                'launch',
+                'nav2_bringup',
+                'navigation_launch.py'
+            ]],
+            shell=True
+        ),
+        #launch the slam toolbaox
+        #ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
+        Node(
+            package='slam_toolbox',
+            executable='async_slam_toolbox_node',
+            name='slam_toolbox',
+            output='screen',
+            parameters=[
+                os.path.join(get_package_share_directory("uno"), 'config', 'mapper.yaml'),
+                {'use_sim_time': True}],
+            arguments=['--ros-args', '--log-level', 'warn']
+        ),
+       Node(
+            package='tf2_ros',
+            namespace = 'scan_to_map',
+            executable='static_transform_publisher',
+            arguments= ["0", "0", "0", "0", "0", "0", "map", "scan"]
+        ),
+        Node(
+            package='tf2_ros',
+            namespace = 'map_to_baselink',
+            executable='static_transform_publisher',
+            arguments= ["0", "0", "0", "0", "0", "0", "map", "odom"]
+        ),
+
+
+
     ])

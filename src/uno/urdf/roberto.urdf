@@ -11,6 +11,7 @@
             filename="ignition-gazebo-imu-system" 
             name="ignition::gazebo::systems::Imu">
         </plugin>
+
     </gazebo>
 
     <!--............................... MATERIALS ..................................... -->
@@ -31,7 +32,10 @@
         </inertial>
     </link>
     
-    <link name="map"></link>
+    <link name="base_link"></link>
+
+	<link name="base_footprint">
+    </link>
 
     <link name="chassis_link">
         <visual>
@@ -55,86 +59,85 @@
         </inertial>
     </link>
     
- <link name="front_right_wheel_link">
-    <visual>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-        <material name="blue"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-    </collision>
-    <inertial>
-        <mass value="0.6"/>
-        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-</link>
+    <link name="front_right_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6"/>
+            <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
 
-<link name="front_left_wheel_link">
-    <visual>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-        <material name="blue"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-    </collision>
-    <inertial>
-        <mass value="0.6"/>
-        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-</link>
+    <link name="front_left_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6"/>
+            <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
 
-<link name="rear_right_wheel_link">
-    <visual>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-        <material name="blue"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-    </collision>
-    <inertial>
-        <mass value="0.6"/>
-        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-</link>
+    <link name="rear_right_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6"/>
+            <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
 
-<link name="rear_left_wheel_link">
-    <visual>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-        <material name="blue"/>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-            <cylinder radius="0.09" length="0.03"/>
-        </geometry>
-    </collision>
-    <inertial>
-        <mass value="0.6"/>
-        <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
-    </inertial>
-</link>
-
+    <link name="rear_left_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6"/>
+            <inertia ixx="0.00126" iyy="0.00126" izz="0.00243" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
     
     <link name="camera_link">
         <visual>
@@ -155,9 +158,39 @@
         </inertial>
     </link>
 
+    <joint name="laser" type="fixed">
+        <origin xyz="-0.005 0.00 0.360" rpy="3.14159 0 0" />
+        <parent link="chassis_link" />
+        <child link="base_laser_link" />
+    </joint>
+
+    <link name="base_laser_link">
+        <visual>
+        <geometry>
+            <box size="0.00 0.05 0.06" />
+        </geometry>
+        <material name="Green" />
+        </visual>
+        <inertial>
+        <mass value="0.000001" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+            iyy="0.0001" iyz="0.0"
+            izz="0.0001" />
+        </inertial>
+    </link>
+
     <!-- Joints -->
+
+       <!-- Define joint between base and footprint -->
+   <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
     <joint name="joint_base_chassis" type="fixed">
-        <parent link="map"/>
+        <parent link="base_link"/>
         <child link="chassis_link"/>
         <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
     </joint>    
@@ -167,6 +200,7 @@
         <child link="camera_link"/>
         <origin xyz="0.3 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
     </joint>
+
 
    <joint name="joint_chassis_imu" type="continuous">
         <parent link="chassis_link"/>
@@ -208,7 +242,8 @@
         <parent link="chassis_link"/>
         <child link="camera_link_optical" />
     </joint>
-   
+
+ 
     <!--............................... GAZEBO DRIVER ..................................... -->
     <gazebo>
         <plugin
@@ -219,6 +254,10 @@
             <wheel_separation>0.6</wheel_separation>
             <wheel_radius>0.09</wheel_radius>
             <odom_publish_frequency>1</odom_publish_frequency>
+            <odom_topic>/odom</odom_topic>
+            <tf_topic>/tf</tf_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_footprint</child_frame_id>
             <topic>cmd_vel</topic>
         </plugin>
 
@@ -269,6 +308,37 @@
             <visualize>true</visualize>
             <topic>rgbd_camera</topic>
             <enable_metrics>true</enable_metrics>
+        </sensor>
+    </gazebo>
+
+    <!-- ........................... LIDAR PLUGIN ................................... -->
+    <gazebo reference="base_laser_link">
+        <sensor name='gpu_lidar' type='gpu_lidar'>
+          <topic>scan</topic>
+          <update_rate>10</update_rate>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>640</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.396263</min_angle>
+                <max_angle>1.396263</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.261799</min_angle>
+                <max_angle>0.261799</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>10.0</max>
+              <resolution>0.01</resolution>
+            </range>
+          </lidar>
+          <alwaysOn>1</alwaysOn>
+          <visualize>true</visualize>
         </sensor>
     </gazebo>
 </robot>
