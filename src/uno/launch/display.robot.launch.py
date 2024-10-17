@@ -36,27 +36,19 @@ def generate_launch_description():
     # Path to your URDF file
     urdf_file_path = os.path.join(pkg_project_bringup, 'urdf', 'roberto.urdf')
 
-    slam_config_path = os.path.join(get_package_share_directory("uno"), 'config', 'mapper.yaml')
-
-    nav2_params_config_path = os.path.join(get_package_share_directory("uno"), 'config', 'nav2.yaml')
+    slam_config_path = os.path.join(get_package_share_directory("uno"), 'config', 'slam.yaml')
 
     position_x = LaunchConfiguration("position_x")
     position_y = LaunchConfiguration("position_y")
     orientation_yaw = LaunchConfiguration("orientation_yaw")
 
-   # Variables
-    lifecycle_nodes = ['map_saver']
 
-    # Create our own temporary YAML files that include substitutions
-    configured_params = ParameterFile(
-        RewrittenYaml(
-            source_file=nav2_params_config_path,
-            param_rewrites={},
-            convert_types=True,
-        ),
-        allow_substs=True,
+    rewritten_parameters = RewrittenYaml(
+        source_file=slam_config_path,
+        param_rewrites={},
+        convert_types=True
     )
-    
+
     # Read the URDF file
     with open(urdf_file_path, 'r') as urdf_file:
         robot_description = urdf_file.read()
@@ -75,6 +67,17 @@ def generate_launch_description():
         DeclareLaunchArgument("position_x", default_value="-2.0"),
         DeclareLaunchArgument("position_y", default_value="-0.5"),
         DeclareLaunchArgument("orientation_yaw", default_value="0.0"),
+        Node(
+            package='slam_toolbox',
+            executable='async_slam_toolbox_node',
+            name='slam_toolbox',
+            output='screen',
+            parameters=[
+            rewritten_parameters,
+            {'use_sim_time': True}
+            ]
+        ),
+
         # start gazebo sim
          ExecuteProcess(
             cmd=[
@@ -108,9 +111,6 @@ def generate_launch_description():
                 "/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan",
                 "/rgbd_camera/image@sensor_msgs/msg/Image[ignition.msgs.Image",
                 "/rgbd_camera/depth_image@sensor_msgs/msg/Image[ignition.msgs.Image",
-                "/kinect/camera/color/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
-                "/kinect/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
-                "/kinect/camera/depth/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked",
                 "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU",
             ],
             output='screen'
@@ -133,77 +133,5 @@ def generate_launch_description():
             executable="robot_state_publisher",
             output="both",
             parameters=[{'robot_description': robot_description}],
-        ),
-        #launch nav2 stack 
-        # Map Server
-        Node(
-            package='nav2_map_server',
-            executable='map_server',
-            name='map_server',
-            output='screen',
-            parameters=[{'yaml_filename': '/home/prashun/ros2_ws/src/uno/config/map.yaml'}]
-        ),
-        # Localization Node
-        Node(
-            package='nav2_amcl',
-            executable='amcl',
-            name='amcl',
-            output='screen',
-            parameters=[{'use_sim_time': True}]
-        ),
-        # Planner Node
-        Node(
-            package='nav2_planner',
-            executable='planner_server',
-            name='planner_server',
-            output='screen',
-            parameters=[{'use_sim_time': True}]
-        ),
-
-        # Controller Node
-        Node(
-            package='nav2_controller',
-            executable='controller_server',
-            name='controller_server',
-            output='screen',
-            parameters=[{'use_sim_time': True}]
-        ),
-        # Behavior Tree Node
-        Node(
-            package='nav2_bt_navigator',
-            executable='bt_navigator',
-            name='bt_navigator',
-            output='screen',
-            parameters=[{'use_sim_time': True}]
-        ),
-        # Map Saver
-        Node(
-            package='nav2_map_server',
-            executable='map_saver_server',
-            output='screen',
-            respawn=True,
-            respawn_delay=2.0,
-            arguments=['--ros-args', '--log-level', 'warn'],
-            parameters=[configured_params],
-        ),
-        # Nav2 Lifycycle manager
-        Node(
-            package='nav2_lifecycle_manager',
-            executable='lifecycle_manager',
-            name='lifecycle_manager_slam',
-            output='screen',
-            arguments=['--ros-args', '--log-level', 'warn'],
-            parameters=[{'autostart': True}, {'node_names': lifecycle_nodes}],
-        ),
-        #launch the slam toolbaox
-        Node(
-            package='slam_toolbox',
-            executable='async_slam_toolbox_node',
-            name='slam_toolbox',
-            output='screen',
-            parameters=[
-                slam_config_path,
-                {'use_sim_time': True}],
-            arguments=['--ros-args', '--log-level', 'warn']
         )
     ])

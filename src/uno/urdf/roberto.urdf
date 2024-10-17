@@ -21,7 +21,9 @@
     <material name="invisible">
         <color rgba="0.0 0.0 0.0 0.0"/>
     </material>
-
+    <material name="green">
+        <color rgba="0 0.4 0.5 1"/>
+    </material>
     <!--............................... LINKS ..................................... -->
     <link name="optical_link"></link>
 
@@ -163,7 +165,7 @@
         <geometry>
             <box size="0.00 0.05 0.06" />
         </geometry>
-        <material name="Green" />
+        <material name="green" />
         </visual>
         <inertial>
         <mass value="0.000001" />
@@ -176,7 +178,7 @@
 
     <!-- Joints -->
 
-       <!-- Define joint between base and footprint -->
+    <!-- Define joint between base and footprint -->
    <joint name="base_footprint_joint" type="fixed">
         <parent link="base_footprint"/>
         <child link="base_link"/>
@@ -190,7 +192,7 @@
     </joint>    
 
    <joint name="joint_chassis_imu" type="continuous">
-        <parent link="base_link"/>
+        <parent link="chassis_link"/>
         <child link="imu_link"/>
         <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
@@ -203,11 +205,12 @@
         <axis xyz="0 1 0"/>
     </joint>
     
-    <joint name="joint_chassis_front_left_wheel" type="continuous">
+   <joint name="joint_chassis_front_left_wheel" type="continuous">
         <parent link="chassis_link"/>
         <child link="front_left_wheel_link"/>
         <origin xyz="0.18 -0.195 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
+        <damping>0.5</damping> <!-- Added damping -->
     </joint>
     
     <joint name="joint_chassis_rear_right_wheel" type="continuous">
@@ -225,24 +228,24 @@
     </joint>
 
     <joint name="camera_optical_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
-        <parent link="base_link"/>
+        <origin xyz="0.22 0 0" rpy="0 0 0" />
+        <parent link="chassis_link"/>
         <child link="optical_link" />
     </joint>
 
     <joint name="joint_chassis_camera" type="fixed"> <!-- Changed to fixed -->
         <parent link="optical_link"/>
         <child link="camera_link"/>
-        <origin xyz="0.3 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
+        <origin xyz="0.05 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
     </joint>
 
     <joint name="laser" type="fixed">
-        <origin xyz="-0.005 0.00 0.360" rpy="3.14159 0 0" />
+        <origin xyz="0.05 0 0.0360" rpy="3.14159 0 0" />
         <parent link="optical_link" />
         <child link="laser_link" />
     </joint>
  
-    <!--............................... GAZEBO DRIVER ..................................... -->
+    <!--...............................  DIFFERENTIAL DRIVER ..................................... -->
     <gazebo>
         <plugin
             filename="libignition-gazebo-diff-drive-system.so"
@@ -251,14 +254,17 @@
             <right_joint>joint_chassis_front_right_wheel</right_joint>
             <wheel_separation>0.6</wheel_separation>
             <wheel_radius>0.09</wheel_radius>
-            <odom_publish_frequency>1</odom_publish_frequency>
+            <odom_publish_frequency>30</odom_publish_frequency> <!-- Increased frequency -->
             <odom_topic>/odom</odom_topic>
             <tf_topic>/tf</tf_topic>
             <frame_id>odom</frame_id>
             <child_frame_id>base_footprint</child_frame_id>
             <topic>cmd_vel</topic>
         </plugin>
+    </gazebo>
 
+    <!--...............................  BATTREY DRIVER ..................................... -->
+    <gazebo>
         <plugin filename="gz-sim-linearbatteryplugin-system"
           name="gz::sim::systems::LinearBatteryPlugin">
             <battery_name>linear_battery</battery_name>
@@ -338,5 +344,52 @@
           <alwaysOn>1</alwaysOn>
           <visualize>true</visualize>
         </sensor>
+    </gazebo>
+
+    <!-- ........................... KEYBOARD NAVIGATION PLUGIN ................................... -->
+    <gazebo>
+        <!-- Moving Backward-->
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so"
+                name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+                <match field="data">16777237</match>
+            </input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">
+                linear: {x: -0.5}, angular: {z: 0.0}
+            </output>
+        </plugin>
+
+        <!-- Moving forward-->
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so"
+                name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+                <match field="data">16777235</match>
+            </input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">
+                linear: {x: 0.5}, angular: {z: 0.0}
+            </output>
+        </plugin>
+
+      <!-- Moving left-->
+      <plugin filename="libignition-gazebo-triggered-publisher-system.so"
+              name="ignition::gazebo::systems::TriggeredPublisher">
+          <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+              <match field="data">16777234</match>
+          </input>
+          <output type="ignition.msgs.Twist" topic="/cmd_vel">
+              linear: {x: 0.0}, angular: {z: 1.0}
+          </output>
+      </plugin>
+
+         <!-- Moving right-->
+      <plugin filename="libignition-gazebo-triggered-publisher-system.so"
+              name="ignition::gazebo::systems::TriggeredPublisher">
+          <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+              <match field="data">16777236</match>
+          </input>
+          <output type="ignition.msgs.Twist" topic="/cmd_vel">
+              linear: {x: 0.0}, angular: {z: -1.0}
+          </output>
+      </plugin>
     </gazebo>
 </robot>
