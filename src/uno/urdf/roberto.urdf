@@ -23,7 +23,7 @@
     </material>
 
     <!--............................... LINKS ..................................... -->
-    <link name="camera_link_optical"></link>
+    <link name="optical_link"></link>
 
     <link name="imu_link">
         <inertial>
@@ -158,13 +158,7 @@
         </inertial>
     </link>
 
-    <joint name="laser" type="fixed">
-        <origin xyz="-0.005 0.00 0.360" rpy="3.14159 0 0" />
-        <parent link="chassis_link" />
-        <child link="base_laser_link" />
-    </joint>
-
-    <link name="base_laser_link">
+    <link name="laser_link">
         <visual>
         <geometry>
             <box size="0.00 0.05 0.06" />
@@ -195,15 +189,8 @@
         <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
     </joint>    
 
-    <joint name="joint_chassis_camera" type="fixed"> <!-- Changed to fixed -->
-        <parent link="chassis_link"/>
-        <child link="camera_link"/>
-        <origin xyz="0.3 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
-    </joint>
-
-
    <joint name="joint_chassis_imu" type="continuous">
-        <parent link="chassis_link"/>
+        <parent link="base_link"/>
         <child link="imu_link"/>
         <origin xyz="0.18 0.195 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
@@ -239,10 +226,21 @@
 
     <joint name="camera_optical_joint" type="fixed">
         <origin xyz="0 0 0" rpy="-1.571 0 -1.571" />
-        <parent link="chassis_link"/>
-        <child link="camera_link_optical" />
+        <parent link="base_link"/>
+        <child link="optical_link" />
     </joint>
 
+    <joint name="joint_chassis_camera" type="fixed"> <!-- Changed to fixed -->
+        <parent link="optical_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.3 0 0.1" rpy="0 0 0"/> <!-- Adjusted position -->
+    </joint>
+
+    <joint name="laser" type="fixed">
+        <origin xyz="-0.005 0.00 0.360" rpy="3.14159 0 0" />
+        <parent link="optical_link" />
+        <child link="laser_link" />
+    </joint>
  
     <!--............................... GAZEBO DRIVER ..................................... -->
     <gazebo>
@@ -312,14 +310,14 @@
     </gazebo>
 
     <!-- ........................... LIDAR PLUGIN ................................... -->
-    <gazebo reference="base_laser_link">
+    <gazebo reference="laser_link">
         <sensor name='gpu_lidar' type='gpu_lidar'>
           <topic>scan</topic>
-          <update_rate>10</update_rate>
+          <update_rate>1</update_rate>
           <lidar>
             <scan>
               <horizontal>
-                <samples>640</samples>
+                <samples>320</samples>
                 <resolution>1</resolution>
                 <min_angle>-1.396263</min_angle>
                 <max_angle>1.396263</max_angle>

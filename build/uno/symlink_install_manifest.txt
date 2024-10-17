@@ -1,5 +1,7 @@
 /home/prashun/ros2_ws/install/uno/share/uno/config/controller.yaml
+/home/prashun/ros2_ws/install/uno/share/uno/config/map.yaml
 /home/prashun/ros2_ws/install/uno/share/uno/config/mapper.yaml
+/home/prashun/ros2_ws/install/uno/share/uno/config/nav2.yaml
 /home/prashun/ros2_ws/install/uno/share/uno/config/rgbd_cam.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/config/robot.rviz
 /home/prashun/ros2_ws/install/uno/share/uno/sdf/warehouse.sdf

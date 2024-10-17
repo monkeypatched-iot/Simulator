@@ -1,18 +1,17 @@
 from rclpy.node import Node
 from launch import LaunchDescription
 import os
-from launch import LaunchDescription
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-from launch import LaunchDescription
 from launch.actions import ExecuteProcess
-from launch.actions import TimerAction
 from launch.substitutions import LaunchConfiguration
 from launch.actions import DeclareLaunchArgument
 from launch.actions import ExecuteProcess
-from launch.conditions import IfCondition
-from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
-from launch_ros.substitutions import FindPackageShare
+from launch.substitutions import FindExecutable, LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+from launch_ros.descriptions import ParameterFile
+from nav2_common.launch import  RewrittenYaml
 
 def generate_launch_description():
 
@@ -37,11 +36,26 @@ def generate_launch_description():
     # Path to your URDF file
     urdf_file_path = os.path.join(pkg_project_bringup, 'urdf', 'roberto.urdf')
 
+    slam_config_path = os.path.join(get_package_share_directory("uno"), 'config', 'mapper.yaml')
+
+    nav2_params_config_path = os.path.join(get_package_share_directory("uno"), 'config', 'nav2.yaml')
 
     position_x = LaunchConfiguration("position_x")
     position_y = LaunchConfiguration("position_y")
     orientation_yaw = LaunchConfiguration("orientation_yaw")
-    gui = LaunchConfiguration("gui")
+
+   # Variables
+    lifecycle_nodes = ['map_saver']
+
+    # Create our own temporary YAML files that include substitutions
+    configured_params = ParameterFile(
+        RewrittenYaml(
+            source_file=nav2_params_config_path,
+            param_rewrites={},
+            convert_types=True,
+        ),
+        allow_substs=True,
+    )
     
     # Read the URDF file
     with open(urdf_file_path, 'r') as urdf_file:
@@ -92,8 +106,8 @@ def generate_launch_description():
                 "/odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
                 "/tf@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V",
                 "/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan",
-                "/kinect/camera/color/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
-                "/kinect/camera/depth/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image",
+                "/rgbd_camera/image@sensor_msgs/msg/Image[ignition.msgs.Image",
+                "/rgbd_camera/depth_image@sensor_msgs/msg/Image[ignition.msgs.Image",
                 "/kinect/camera/color/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
                 "/kinect/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
                 "/kinect/camera/depth/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked",
@@ -121,41 +135,75 @@ def generate_launch_description():
             parameters=[{'robot_description': robot_description}],
         ),
         #launch nav2 stack 
-        # ros2 launch nav2_bringup navigation_launch.py use_sim_time:=True
-        ExecuteProcess(
-            cmd=[[
-                FindExecutable(name='ros2'),
-                'launch',
-                'nav2_bringup',
-                'navigation_launch.py'
-            ]],
-            shell=True
+        # Map Server
+        Node(
+            package='nav2_map_server',
+            executable='map_server',
+            name='map_server',
+            output='screen',
+            parameters=[{'yaml_filename': '/home/prashun/ros2_ws/src/uno/config/map.yaml'}]
+        ),
+        # Localization Node
+        Node(
+            package='nav2_amcl',
+            executable='amcl',
+            name='amcl',
+            output='screen',
+            parameters=[{'use_sim_time': True}]
+        ),
+        # Planner Node
+        Node(
+            package='nav2_planner',
+            executable='planner_server',
+            name='planner_server',
+            output='screen',
+            parameters=[{'use_sim_time': True}]
+        ),
+
+        # Controller Node
+        Node(
+            package='nav2_controller',
+            executable='controller_server',
+            name='controller_server',
+            output='screen',
+            parameters=[{'use_sim_time': True}]
+        ),
+        # Behavior Tree Node
+        Node(
+            package='nav2_bt_navigator',
+            executable='bt_navigator',
+            name='bt_navigator',
+            output='screen',
+            parameters=[{'use_sim_time': True}]
+        ),
+        # Map Saver
+        Node(
+            package='nav2_map_server',
+            executable='map_saver_server',
+            output='screen',
+            respawn=True,
+            respawn_delay=2.0,
+            arguments=['--ros-args', '--log-level', 'warn'],
+            parameters=[configured_params],
+        ),
+        # Nav2 Lifycycle manager
+        Node(
+            package='nav2_lifecycle_manager',
+            executable='lifecycle_manager',
+            name='lifecycle_manager_slam',
+            output='screen',
+            arguments=['--ros-args', '--log-level', 'warn'],
+            parameters=[{'autostart': True}, {'node_names': lifecycle_nodes}],
         ),
         #launch the slam toolbaox
-        #ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
         Node(
             package='slam_toolbox',
             executable='async_slam_toolbox_node',
             name='slam_toolbox',
             output='screen',
             parameters=[
-                os.path.join(get_package_share_directory("uno"), 'config', 'mapper.yaml'),
+                slam_config_path,
                 {'use_sim_time': True}],
             arguments=['--ros-args', '--log-level', 'warn']
-        ),
-       Node(
-            package='tf2_ros',
-            namespace = 'scan_to_map',
-            executable='static_transform_publisher',
-            arguments= ["0", "0", "0", "0", "0", "0", "map", "scan"]
-        ),
-        Node(
-            package='tf2_ros',
-            namespace = 'map_to_baselink',
-            executable='static_transform_publisher',
-            arguments= ["0", "0", "0", "0", "0", "0", "map", "odom"]
-        ),
-
-
-
+        )
     ])
